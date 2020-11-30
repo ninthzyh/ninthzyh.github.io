@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>页面走丢啦~ - 阿毛的博客</title>
+  <title>week1 - 阿毛的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 85vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -146,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Page not found">
+            <span class="h2" id="subtitle" title="week1">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-26 22:28" pubdate>
+        2020年11月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      369 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -163,13 +216,134 @@
     
       
 
-<script>
-  function redirect() {
-    location.href = "/";
-  }
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">week1</h1>
+            
+            <div class="markdown-body">
+              <h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><p>1.[页面导入样式时，使用link和@import有什么区别？]</p>
+<p>2.[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</p>
+<p>3.[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</p>
+<hr>
+<h1 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="[页面导入样式时，使用link和@import有什么区别？]"></a>[页面导入样式时，使用link和@import有什么区别？]</h1><p>link：</p>
+<p>1.页面渲染同时加载，</p>
+<p>2.xhtml，无兼容问题；</p>
+<p>3.支持用js控制dom修改样式；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;old.css&#x27;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/css&#x27;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&#x27;stylesheet&#x27;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#x27;link&#x27;</span>&gt;</span></code></pre>
 
-  //setTimeout(redirect, 3000)
-</script>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> linkId = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;link&#x27;</span>)
+linkId.href = <span class="hljs-string">&#x27;new.css&#x27;</span></code></pre>
+
+<p>@import：</p>
+<p>1.页面渲染结束加载；</p>
+<p>2.css，存在兼容问题，不兼容ie5之前；</p>
+<p>3.不支持；</p>
+<h2 id="css-圣杯布局和双飞翼布局的理解和区别，并用代码实现"><a href="#css-圣杯布局和双飞翼布局的理解和区别，并用代码实现" class="headerlink" title="[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]"></a>[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</h2><h2 id="js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"><a href="#js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]"></a>[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</h2><pre><code class="hljs js"><span class="hljs-comment">// new 长度=5的数组</span>
+<span class="hljs-keyword">let</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">5</span>) 
+<span class="hljs-keyword">let</span> num = randomNum()
+<span class="hljs-comment">//计数器</span>
+<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>
+randomArr(arr,num)
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomArr</span>(<span class="hljs-params">arr,num</span>)</span>&#123;
+    <span class="hljs-comment">//arr数组中没有随机数num，给arr索引位置赋值，i++,</span>
+    <span class="hljs-comment">//否则重新获取随机数</span>
+    <span class="hljs-keyword">if</span>(arr.indexOf(num)&lt;<span class="hljs-number">0</span>)&#123;
+        arr[i] = num;
+        i++
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        num=randomNum()
+    &#125;
+    <span class="hljs-comment">//计数器i&lt;arr数组长度,重新调用randomArr()</span>
+    <span class="hljs-comment">//否则return</span>
+    <span class="hljs-keyword">if</span>(i&lt;arr.length)&#123;
+        randomArr(arr,num)
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-built_in">console</span>.log(arr)
+        <span class="hljs-keyword">return</span>
+    &#125;
+&#125;
+
+<span class="hljs-comment">//2-32的随机数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomNum</span>(<span class="hljs-params"></span>)</span>&#123;
+    <span class="hljs-comment">//floor向下取整，random取(0,1)随机数</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">31</span>+<span class="hljs-number">2</span>)
+&#125;</code></pre>
+
+
+
+
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/week/">week</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/30/float/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">浮动布局</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/26/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
 
     
 
@@ -253,9 +427,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 

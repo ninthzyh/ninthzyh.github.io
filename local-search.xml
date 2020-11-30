@@ -4,13 +4,32 @@
   
   
   <entry>
-    <title>test</title>
-    <link href="/2020/11/26/about/me/"/>
-    <url>/2020/11/26/about/me/</url>
+    <title>浮动布局</title>
+    <link href="/2020/11/30/float/"/>
+    <url>/2020/11/30/float/</url>
     
-    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>content</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h2>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>week1</title>
+    <link href="/2020/11/26/week/week1/"/>
+    <url>/2020/11/26/week/week1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><p>1.[页面导入样式时，使用link和@import有什么区别？]</p><p>2.[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</p><p>3.[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</p><hr><h1 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="[页面导入样式时，使用link和@import有什么区别？]"></a>[页面导入样式时，使用link和@import有什么区别？]</h1><p>link：</p><p>1.页面渲染同时加载，</p><p>2.xhtml，无兼容问题；</p><p>3.支持用js控制dom修改样式；</p><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;old.css&#x27;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text/css&#x27;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&#x27;stylesheet&#x27;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#x27;link&#x27;</span>&gt;</span></code></pre><pre><code class="hljs js"><span class="hljs-keyword">let</span> linkId = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;link&#x27;</span>)linkId.href = <span class="hljs-string">&#x27;new.css&#x27;</span></code></pre><p>@import：</p><p>1.页面渲染结束加载；</p><p>2.css，存在兼容问题，不兼容ie5之前；</p><p>3.不支持；</p><h2 id="css-圣杯布局和双飞翼布局的理解和区别，并用代码实现"><a href="#css-圣杯布局和双飞翼布局的理解和区别，并用代码实现" class="headerlink" title="[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]"></a>[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</h2><h2 id="js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"><a href="#js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]"></a>[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</h2><pre><code class="hljs js"><span class="hljs-comment">// new 长度=5的数组</span><span class="hljs-keyword">let</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">let</span> num = randomNum()<span class="hljs-comment">//计数器</span><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>randomArr(arr,num)<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomArr</span>(<span class="hljs-params">arr,num</span>)</span>&#123;    <span class="hljs-comment">//arr数组中没有随机数num，给arr索引位置赋值，i++,</span>    <span class="hljs-comment">//否则重新获取随机数</span>    <span class="hljs-keyword">if</span>(arr.indexOf(num)&lt;<span class="hljs-number">0</span>)&#123;        arr[i] = num;        i++    &#125;<span class="hljs-keyword">else</span>&#123;        num=randomNum()    &#125;    <span class="hljs-comment">//计数器i&lt;arr数组长度,重新调用randomArr()</span>    <span class="hljs-comment">//否则return</span>    <span class="hljs-keyword">if</span>(i&lt;arr.length)&#123;        randomArr(arr,num)    &#125;<span class="hljs-keyword">else</span>&#123;        <span class="hljs-built_in">console</span>.log(arr)        <span class="hljs-keyword">return</span>    &#125;&#125;<span class="hljs-comment">//2-32的随机数</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">randomNum</span>(<span class="hljs-params"></span>)</span>&#123;    <span class="hljs-comment">//floor向下取整，random取(0,1)随机数</span>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">31</span>+<span class="hljs-number">2</span>)&#125;</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>week</tag>
+      
+    </tags>
     
   </entry>
   
