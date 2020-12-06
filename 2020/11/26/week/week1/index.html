@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      369 字
+      1.1k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      15
        分钟
     </span>
   
@@ -227,11 +227,11 @@
             <h1 style="display: none">week1</h1>
             
             <div class="markdown-body">
-              <h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><p>1.[页面导入样式时，使用link和@import有什么区别？]</p>
+              <h2 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h2><p>1.[页面导入样式时，使用link和@import有什么区别？]</p>
 <p>2.[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</p>
 <p>3.[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</p>
 <hr>
-<h1 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="[页面导入样式时，使用link和@import有什么区别？]"></a>[页面导入样式时，使用link和@import有什么区别？]</h1><p>link：</p>
+<h3 id="1-页面导入样式时，使用link和-import有什么区别？"><a href="#1-页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="1.[页面导入样式时，使用link和@import有什么区别？]"></a>1.[页面导入样式时，使用link和@import有什么区别？]</h3><p>link：</p>
 <p>1.页面渲染同时加载，</p>
 <p>2.xhtml，无兼容问题；</p>
 <p>3.支持用js控制dom修改样式；</p>
@@ -244,7 +244,170 @@ linkId.href = <span class="hljs-string">&#x27;new.css&#x27;</span></code></pre>
 <p>1.页面渲染结束加载；</p>
 <p>2.css，存在兼容问题，不兼容ie5之前；</p>
 <p>3.不支持；</p>
-<h2 id="css-圣杯布局和双飞翼布局的理解和区别，并用代码实现"><a href="#css-圣杯布局和双飞翼布局的理解和区别，并用代码实现" class="headerlink" title="[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]"></a>[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</h2><h2 id="js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"><a href="#js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]"></a>[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</h2><pre><code class="hljs js"><span class="hljs-comment">// new 长度=5的数组</span>
+<h3 id="2-css-圣杯布局和双飞翼布局的理解和区别，并用代码实现"><a href="#2-css-圣杯布局和双飞翼布局的理解和区别，并用代码实现" class="headerlink" title="2.[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]"></a>2.[[css]圣杯布局和双飞翼布局的理解和区别，并用代码实现]</h3><p>圣杯布局:</p>
+<p>1）dom直观，div包裹整个主区域；</p>
+<p>2）相对定位；</p>
+<p>3）代码量多，清除浮动多，副作用少；</p>
+<p>双飞翼布局:</p>
+<p>1）dom不直观，div包裹主区域的中间区域；</p>
+<p>2）不用定位；</p>
+<p>3）代码量少，清除浮动少，副作用多；</p>
+<h6 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h6><table>
+<thead>
+<tr>
+<th>header</th>
+<th>header</th>
+<th>头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left content right</td>
+<td>div</td>
+<td>主</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>footer</td>
+<td>底</td>
+</tr>
+</tbody></table>
+<p>1）主区域的content优先加载，要将content的div放在第一个位置，此时从上到下排列为left content right,</p>
+<p>2）float将主区域的三块内容显示在一行，设置负外边距，给main增加padding，padding左右两侧的距离是左右元素的宽度，再设置margin元素不会出去。调整顺序.content{width: 100%;}主区域的中间内容独占一行。</p>
+<p>左区域.left{margin-left:-100%;}使左区域在中间区域的左边；</p>
+<p>右区域.left{margin-left:-右区域宽度;}使左区域在中间区域的右边；</p>
+<p>3）给左右区域增加相对定位，就不会挡住中间区域；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>header<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- 圣杯布局先加载主区域，优先显示 --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>content<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>left<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>footer<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less">*&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+&#125;
+<span class="hljs-selector-class">.header</span>,<span class="hljs-selector-class">.footer</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+&#125;
+<span class="hljs-selector-class">.main</span>&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">300px</span>;
+  <span class="hljs-comment">// 清除浮动的塌陷</span>
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-selector-class">.content</span>&#123;
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: lightgreen;
+  &#125;
+  <span class="hljs-selector-class">.left</span>&#123;
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: lightblue;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">left</span>: -<span class="hljs-number">300px</span>;
+  &#125;
+  <span class="hljs-selector-class">.right</span>&#123;
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: yellow;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">right</span>: -<span class="hljs-number">300px</span>;
+  &#125;
+&#125;</code></pre>
+
+<h6 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h6><table>
+<thead>
+<tr>
+<th>header</th>
+<th>header</th>
+<th>头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content</td>
+<td>div content div</td>
+<td>中</td>
+</tr>
+<tr>
+<td>left</td>
+<td>div</td>
+<td>左</td>
+</tr>
+<tr>
+<td>right</td>
+<td>div</td>
+<td>右</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>footer</td>
+<td>底</td>
+</tr>
+</tbody></table>
+<p>双飞翼布局主区域中的中间区域被div包裹</p>
+<p>1）中间区域宽度.main{width:100%}，</p>
+<p>左区域.left{margin-left:-100%}调整左区域与中间区域的顺序，</p>
+<p>右区域.right{margin-right:右区域的宽度}</p>
+<p>左右区域会遮住中间区域，给中间区域包裹一层div，设置浮动和宽度。给中间区域设置外边距中间缩进；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>header<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span>conter<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>left<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>right<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>footer<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less">*&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+&#125;
+<span class="hljs-selector-class">.header</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+&#125;
+<span class="hljs-selector-class">.footer</span>&#123;
+  <span class="hljs-selector-class">.header</span>;
+  <span class="hljs-comment">// 清除浮动对footer的影响</span>
+  <span class="hljs-attribute">clear</span>: both;
+&#125;
+<span class="hljs-selector-class">.main</span>&#123;
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-selector-class">.center</span>&#123;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: lightgreen;
+  &#125;
+&#125;
+<span class="hljs-selector-class">.left</span>&#123;
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background</span>: lightblue;
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">100%</span>;
+&#125;
+<span class="hljs-selector-class">.right</span>&#123;
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background</span>: yellow;
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">300px</span>;
+&#125;</code></pre>
+
+<h3 id="3-js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"><a href="#3-js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="3.[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]"></a>3.[[js]用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值]</h3><pre><code class="hljs js"><span class="hljs-comment">// new 长度=5的数组</span>
 <span class="hljs-keyword">let</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">5</span>) 
 <span class="hljs-keyword">let</span> num = randomNum()
 <span class="hljs-comment">//计数器</span>
@@ -489,5 +652,5 @@ randomArr(arr,num)
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
