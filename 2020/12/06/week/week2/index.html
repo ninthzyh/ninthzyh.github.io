@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>week2 - 阿毛的博客</title>
+  <title>week2 - 老废物乐园</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      78 字
+      696 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      9
        分钟
     </span>
   
@@ -230,7 +230,88 @@
               <h2 id="week2"><a href="#week2" class="headerlink" title="week2"></a>week2</h2><p>1.[[html]html的元素有哪些（包含H5）？]</p>
 <p>2.[[css]CSS3有哪些新增的特性？]</p>
 <p>3.[[js]写一个方法去掉字符串中的空格]</p>
-<h3 id="1-html-html的元素有哪些（包含H5）？"><a href="#1-html-html的元素有哪些（包含H5）？" class="headerlink" title="1.[[html]html的元素有哪些（包含H5）？]"></a>1.[[html]html的元素有哪些（包含H5）？]</h3><h3 id="2-css-CSS3有哪些新增的特性？"><a href="#2-css-CSS3有哪些新增的特性？" class="headerlink" title="2.[[css]CSS3有哪些新增的特性？]"></a>2.[[css]CSS3有哪些新增的特性？]</h3><h3 id="3-js-写一个方法去掉字符串中的空格"><a href="#3-js-写一个方法去掉字符串中的空格" class="headerlink" title="3.[[js]写一个方法去掉字符串中的空格]"></a>3.[[js]写一个方法去掉字符串中的空格]</h3>
+<h3 id="1-html-html的元素有哪些（包含H5）？"><a href="#1-html-html的元素有哪些（包含H5）？" class="headerlink" title="1.[[html]html的元素有哪些（包含H5）？]"></a>1.[[html]html的元素有哪些（包含H5）？]</h3><p>行内：a|span|em|label|br</p>
+<p>1）不可设置width|height|padding|margin；</p>
+<p>2）和其他元素一行排列；</p>
+<p>3）自身有高度</p>
+<p>块：div|h*|p|form|table|ul|li</p>
+<p>1）可设置width|height|padding|margin;</p>
+<p>2）独占一行；</p>
+<p>3）高度默认继承父元素</p>
+<p>行块：input|img</p>
+<p>1）可设置width|heigth|padding|margin;</p>
+<p>2）独占一行；</p>
+<p>3）display:inline-block;|float|position:absolute|fixed可改变为行块；</p>
+<p>H5：header|footer|main|article|aside|nav|video|audio|canvas|mark|time|details|meter</p>
+<h3 id="2-css-CSS3有哪些新增的特性？"><a href="#2-css-CSS3有哪些新增的特性？" class="headerlink" title="2.[[css]CSS3有哪些新增的特性？]"></a>2.[[css]CSS3有哪些新增的特性？]</h3><p>1.css选择器</p>
+<p>last-child 父元素最后一个子元素</p>
+<p>nth-child(n) 父元素的第n个子元素</p>
+<p>nth-last-child(n) 父元素倒数第n个子元素</p>
+<p>2.圆角</p>
+<p>border-radius:num|%;</p>
+<p>3.阴影</p>
+<p>box-shadow: h v 模糊距离 阴影大小 rgba;</p>
+<p>4.多列布局</p>
+<p>column-count:num;</p>
+<p>column-gap:num;</p>
+<p>column-rule: 列宽 列中间样式 列中间颜色</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mul-col&quot;</span>&gt;</span>
+      当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-class">.mul-col</span>&#123;
+  <span class="hljs-attribute">column-count</span>:<span class="hljs-number">3</span>;
+  <span class="hljs-attribute">column-gap</span>:<span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">column-rule</span>:<span class="hljs-number">1px</span> solid red;
+&#125;</code></pre>
+
+<p>5.@font-face</p>
+<p>加载没有安装的字体</p>
+<pre><code class="hljs less"><span class="hljs-keyword">@font-face</span>&#123;
+  <span class="hljs-attribute">font-family</span>: myfont;
+  <span class="hljs-attribute">src</span>:url(<span class="hljs-string">&#x27;../text/ADOBEGOTHICSTD-BOLD.OTF&#x27;</span>)
+&#125;
+<span class="hljs-selector-class">.mul-col</span>&#123;
+  <span class="hljs-attribute">column-count</span>:<span class="hljs-number">3</span>;
+  <span class="hljs-attribute">column-gap</span>:<span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">column-rule</span>:<span class="hljs-number">1px</span> solid red;
+  <span class="hljs-attribute">font-family</span>: myfont;
+&#125;</code></pre>
+
+<p>6.flex</p>
+<p>7.渐变</p>
+<p>background:linear-gradient(渐变方向,color1,color2,…….)</p>
+<h3 id="3-js-写一个方法去掉字符串中的空格"><a href="#3-js-写一个方法去掉字符串中的空格" class="headerlink" title="3.[[js]写一个方法去掉字符串中的空格]"></a>3.[[js]写一个方法去掉字符串中的空格]</h3><p>1）正则</p>
+<pre><code class="hljs JS"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;    f d   sf s  &quot;</span>
+<span class="hljs-comment">// ig:忽略大小写&amp;全局匹配</span>
+<span class="hljs-comment">// *:表达式匹配&gt;=0次</span>
+<span class="hljs-comment">// $:匹配行尾</span>
+<span class="hljs-comment">// ^:匹配行首</span>
+<span class="hljs-comment">// |:或</span>
+<span class="hljs-comment">// 去除所有空格</span>
+s.replace(<span class="hljs-regexp">/\s/ig</span>,<span class="hljs-string">&#x27;&#x27;</span>)
+<span class="hljs-comment">// 去除左右两边所有空格</span>
+s.replace(<span class="hljs-regexp">/^\s*|\s*$/ig</span>,<span class="hljs-string">&#x27;&#x27;</span>)
+<span class="hljs-comment">// 去除左边空格</span>
+s.replace(<span class="hljs-regexp">/^\s*/ig</span>,<span class="hljs-string">&#x27;&#x27;</span>)
+<span class="hljs-comment">// 去除右边空格</span>
+s.replace(<span class="hljs-regexp">/\s*$/ig</span>,<span class="hljs-string">&#x27;&#x27;</span>)</code></pre>
+
+<p>2）trim</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;    f d   sf s  &quot;</span>
+<span class="hljs-comment">// 去除左右两边所有空格</span>
+s.trim()
+<span class="hljs-comment">// 去除左边空格</span>
+s.trimLeft()
+<span class="hljs-comment">// 去除右边空格</span>
+s.trimRight()</code></pre>
+
+<p>3）split</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;    f d   sf s  &quot;</span>
+<span class="hljs-comment">// 去除所有空格</span>
+s.split(<span class="hljs-string">&#x27; &#x27;</span>).join(<span class="hljs-string">&#x27;&#x27;</span>)</code></pre>
+
+
             </div>
             <hr>
             <div>
@@ -256,8 +337,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/30/float/">
-                        <span class="hidden-mobile">浮动布局</span>
+                      <a href="/2020/12/06/week/week3/">
+                        <span class="hidden-mobile">week3</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

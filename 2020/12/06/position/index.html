@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>position - 阿毛的博客</title>
+  <title>position - 老废物乐园</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1 字
+      1k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      16
        分钟
     </span>
   
@@ -227,7 +227,257 @@
             <h1 style="display: none">position</h1>
             
             <div class="markdown-body">
-              <h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2>
+              <h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><h3 id="1-absolute参照元素："><a href="#1-absolute参照元素：" class="headerlink" title="1.absolute参照元素："></a>1.absolute参照元素：</h3><p>父元素有定位属性absolute|relative|fixed|…，子元素相对于父元素定位，如果父元素没有定位，一直向上找，找不到时对于整个页面；</p>
+<h3 id="2-定位设置尺寸："><a href="#2-定位设置尺寸：" class="headerlink" title="2.定位设置尺寸："></a>2.定位设置尺寸：</h3><p>没设置尺寸时定位的top|bottom|left|right会影响尺寸;</p>
+<h3 id="3-滚动对元素定位影响"><a href="#3-滚动对元素定位影响" class="headerlink" title="3.滚动对元素定位影响"></a>3.滚动对元素定位影响</h3><p>内容在容器里发生定位，有滚动条时内容随滚动条滚动，不会相对父元素始终定位</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">3px</span> solid yellowgreen;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">overflow</span>: scroll;
+  <span class="hljs-selector-tag">section</span>&#123;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">600px</span>;
+    <span class="hljs-selector-tag">div</span> &#123;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+      <span class="hljs-attribute">background</span>: yellowgreen;
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-comment">// 绝对定位居中，父元素有定位属性，相对于父元素定位；</span>
+      <span class="hljs-comment">// 父元素没有定位，向上层找有定位属性，相对于该上层元素定位，</span>
+      <span class="hljs-comment">// 没有相对于整个页面</span>
+      <span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">50px</span>;
+      <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">50px</span>;
+    &#125;
+  &#125;
+&#125;</code></pre>
+
+<h3 id="4-图标定位"><a href="#4-图标定位" class="headerlink" title="4.图标定位"></a>4.图标定位</h3><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hot<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">ul</span> &#123;
+  <span class="hljs-attribute">list-style</span>: none;
+  <span class="hljs-selector-tag">li</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: lightblue;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid lightgreen;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">box-sizing</span>: content-box;
+    <span class="hljs-selector-tag">span</span> &#123;
+      <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+      <span class="hljs-attribute">background</span>: red;
+      <span class="hljs-attribute">display</span>: inline-block;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+      <span class="hljs-attribute">text-align</span>: center;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">26px</span>;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-attribute">top</span>: -<span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">left</span>: -<span class="hljs-number">20px</span>;
+    &#125;
+  &#125;
+&#125;</code></pre>
+
+<h3 id="5-定位层级"><a href="#5-定位层级" class="headerlink" title="5.定位层级"></a>5.定位层级</h3><p>a.有定位属性时，鼠标移入改变元素层级</p>
+<pre><code class="hljs html"> <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hot<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">ul</span> &#123;
+  <span class="hljs-attribute">list-style</span>: none;
+  <span class="hljs-selector-tag">li</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background</span>: lightblue;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid lightgreen;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">box-sizing</span>: content-box;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-selector-tag">span</span> &#123;
+      <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+      <span class="hljs-attribute">background</span>: red;
+      <span class="hljs-attribute">display</span>: inline-block;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+      <span class="hljs-attribute">text-align</span>: center;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">26px</span>;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-attribute">top</span>: -<span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">left</span>: -<span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+    &#125;
+    <span class="hljs-selector-class">.first</span>&#123;
+      <span class="hljs-attribute">background</span>:red;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;
+      <span class="hljs-attribute">z-index</span>: <span class="hljs-number">2</span>;
+    &#125;
+  &#125;
+  <span class="hljs-comment">// 鼠标移入li&gt;.first层级改变</span>
+  <span class="hljs-attribute">li</span>:hover .first&#123;
+    <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">1</span>;
+  &#125;
+&#125;</code></pre>
+
+<p>b.购物车</p>
+<p>鼠标移入展开，移除收缩</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;top&quot;</span>&gt;</span>shop<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bottom&quot;</span>&gt;</span>showShop<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+  <span class="hljs-attribute">position</span>: relative;
+  &gt; <span class="hljs-selector-tag">div</span> &#123;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  &#125;
+  <span class="hljs-selector-class">.top</span> &#123;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-comment">// 设置定位属性，增加top层级，让top层级覆盖bottom，默认层级为0</span>
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+  &#125;
+  <span class="hljs-comment">// 默认bottom隐藏，top有border-bottom</span>
+  <span class="hljs-selector-class">.bottom</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-comment">// 绝对定位，right：0，bottom靠右，相对父级article定位</span>
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">display</span>: none;
+  &#125;
+&#125;
+<span class="hljs-comment">// 鼠标移入article top的border-bottom消失，bottom出现</span>
+<span class="hljs-attribute">article</span>:hover .top &#123;
+  <span class="hljs-attribute">border-bottom</span>: none;
+&#125;
+<span class="hljs-attribute">article</span>:hover .bottom &#123;
+  <span class="hljs-attribute">display</span>: block;
+&#125;</code></pre>
+
+<h3 id="6-粘性定位sticky"><a href="#6-粘性定位sticky" class="headerlink" title="6.粘性定位sticky"></a>6.粘性定位sticky</h3><p>a.sticky的h2在同级，新来的元素会叠加之前的粘性元素；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>title1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>p1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>title2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>p2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<p>b.sticky的h2在不同级，新来的元素会把之前的粘性元素顶走；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>title1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>p1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>title2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>p2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">overflow</span>: auto;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-selector-tag">p</span>&#123;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  &#125;
+&#125;
+
+<span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">section</span><span class="hljs-selector-pseudo">:nth-of-type(even)</span> <span class="hljs-selector-tag">h2</span>&#123;
+  <span class="hljs-attribute">background</span>: yellowgreen;
+&#125;
+<span class="hljs-selector-tag">article</span> <span class="hljs-selector-tag">section</span> <span class="hljs-selector-tag">h2</span>&#123;
+  <span class="hljs-attribute">background</span>: lightblue;
+  <span class="hljs-comment">// 粘性定位 top：0定位到顶部</span>
+  <span class="hljs-attribute">position</span>: sticky;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+<h3 id="7-固定定位fixed"><a href="#7-固定定位fixed" class="headerlink" title="7.固定定位fixed"></a>7.固定定位fixed</h3><p>a.两个元素都有定位，后出现的定位权重高，层级大于前面的定位元素，能滚动时会覆盖前面的元素</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- main在header后，两个元素都有定位属性 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">header</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-comment">// 固定定位fixed，top:0</span>
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: lightgreen;
+&#125;
+<span class="hljs-selector-tag">main</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background</span>: lightblue;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">120px</span>;
+&#125;</code></pre>
+
+<p>b.后面的元素没有定位属性，前面的元素能够固定</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!-- main在header后，两个元素都有定位属性 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">header</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: lightgreen;
+&#125;
+<span class="hljs-selector-tag">main</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">background</span>: lightblue;
+  <span class="hljs-comment">// position: relative;</span>
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">120px</span>;
+&#125;</code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+
             </div>
             <hr>
             <div>
