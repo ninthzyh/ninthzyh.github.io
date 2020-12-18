@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4 字
+      1.3k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      20
        分钟
     </span>
   
@@ -227,7 +227,334 @@
             <h1 style="display: none">弹性布局</h1>
             
             <div class="markdown-body">
-              <h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2>
+              <h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2><h4 id="1-传统布局-amp-弹性布局"><a href="#1-传统布局-amp-弹性布局" class="headerlink" title="1.传统布局&amp;弹性布局"></a>1.传统布局&amp;弹性布局</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>main<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>second<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>thrid<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-comment">//传统布局</span>
+*&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-tag">main</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+&#125;
+<span class="hljs-selector-tag">footer</span>&#123;
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  &gt;<span class="hljs-selector-tag">div</span>&#123;
+    <span class="hljs-attribute">background</span>: linear-gradient(to bottom,<span class="hljs-number">#f3f3f3</span>,<span class="hljs-number">#ddd</span>,<span class="hljs-number">#f3f3f3</span>);
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">33%</span>;
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#555</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">3em</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(n+2)</span>&#123;
+    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#555</span>;
+  &#125;
+&#125;</code></pre>
+
+<pre><code class="hljs less"><span class="hljs-comment">// 弹性布局</span>
+*&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+&#125;
+<span class="hljs-selector-tag">main</span>&#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+&#125;
+<span class="hljs-selector-tag">footer</span>&#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">background</span>: linear-gradient(to bottom,<span class="hljs-number">#f3f3f3</span>, <span class="hljs-number">#ddd</span>, <span class="hljs-number">#f3f3f3</span>);
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  &gt;<span class="hljs-selector-tag">div</span>&#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#555</span>;
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">3em</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">33%</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(n+2)</span>&#123;
+    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#555</span>;
+  &#125;
+&#125;</code></pre>
+
+
+
+<h4 id="2-弹性元素方向-amp-溢出换行"><a href="#2-弹性元素方向-amp-溢出换行" class="headerlink" title="2.弹性元素方向&amp;溢出换行"></a>2.弹性元素方向&amp;溢出换行</h4><p>元素方向：水平|水平翻转|垂直|垂直翻转</p>
+<p>flex-direction:row|row-reverse|column|column-reverse;</p>
+<hr>
+<p>不加换行时，外部盒子w|h减小，内部元素自动被压缩，直到内部弹性元素的margin+border+padding+content&gt;外部包裹的盒子盒子被撑破。</p>
+<p>换行|反向换行</p>
+<p>flex-wrap:wrap|wrap-reverse;</p>
+<hr>
+<p>组合语句：flex-flow: flex-direction flex-wrap;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">//flex-direction:column; 垂直排列反向换行</span>
+  <span class="hljs-comment">// 水平排列弹性元素&gt;外部盒子压缩，flex-wrap反向换行</span>
+  <span class="hljs-attribute">flex-wrap</span>: wrap-reverse;
+  <span class="hljs-comment">// *全选子元素</span>
+  *&#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">10px</span>;
+  &#125;
+&#125;</code></pre>
+
+<h4 id="3-主轴-amp-交叉轴"><a href="#3-主轴-amp-交叉轴" class="headerlink" title="3.主轴&amp;交叉轴"></a>3.主轴&amp;交叉轴</h4><p>flex-direction设置后水平|垂直排列，主轴为水平|垂直，与主轴垂直的是交叉轴。</p>
+<p>主轴排列</p>
+<p>justify-content</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">// 水平反向排列，主轴对齐方式也要反向</span>
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;
+  <span class="hljs-attribute">justify-content</span>: flex-end;
+  *&#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">10px</span>;
+  &#125;
+&#125;</code></pre>
+
+<p>交叉轴排列</p>
+<p>align-items</p>
+<p>stretch;拉伸不设置弹性元素在主轴上的尺寸，否则不能拉伸。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">// y主轴</span>
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-comment">// 交叉轴属性align-items，向交叉轴拉伸，不设置弹性元素在交叉轴上的尺寸，width</span>
+  <span class="hljs-attribute">align-items</span>:stretch;
+
+  <span class="hljs-comment">// x主轴，设置交叉轴上的拉伸，不设置弹性元素在交叉轴上的尺寸，height</span>
+  <span class="hljs-comment">// align-items: stretch;</span>
+  *&#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-comment">// width: 100px;</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">10px</span>;
+  &#125;
+&#125;</code></pre>
+
+<h4 id="4-多行交叉轴"><a href="#4-多行交叉轴" class="headerlink" title="4.多行交叉轴"></a>4.多行交叉轴</h4><p>多行元素在交叉轴上的排列</p>
+<p>align-content:包含主轴交叉轴的属性；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-content</span>: space-around;
+  *&#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">10px</span>;
+  &#125;
+&#125;</code></pre>
+
+<h4 id="5-单个元素交叉轴"><a href="#5-单个元素交叉轴" class="headerlink" title="5.单个元素交叉轴"></a>5.单个元素交叉轴</h4><p>单个元素在交叉轴的控制</p>
+<p>align-self:center|flex-end|flex-start</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-comment">// 弹性元素排列方向翻转，交叉轴y排列到end</span>
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;
+  <span class="hljs-attribute">align-items</span>: flex-end;
+  <span class="hljs-comment">// article第二个元素居中</span>
+  <span class="hljs-selector-pseudo">:nth-child(2)</span>&#123;
+    <span class="hljs-attribute">align-self</span>:center
+  &#125;
+  <span class="hljs-comment">// article第三个元素排列到start</span>
+  <span class="hljs-selector-pseudo">:nth-child(3)</span>&#123;
+    <span class="hljs-attribute">align-self</span>: flex-start;
+  &#125;
+  *&#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">10px</span>;
+  &#125;
+&#125;</code></pre>
+
+<h4 id="6-剩余空间分配"><a href="#6-剩余空间分配" class="headerlink" title="6.剩余空间分配"></a>6.剩余空间分配</h4><p>剩余空间分配</p>
+<p>flex-grow:num;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  * &#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-comment">// 元素总宽高包含padding+border</span>
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-comment">// 背景元素区域从content开始保留</span>
+    <span class="hljs-attribute">background-clip</span>: content-box;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(1)</span> &#123;
+    <span class="hljs-comment">// 第1个元素占剩余空间的0/0+1+2</span>
+    <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">0</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(2)</span> &#123;
+    <span class="hljs-comment">// 第2个元素占剩余空间的1/0+1+2</span>
+    <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(3)</span> &#123;
+    <span class="hljs-comment">// 第3个元素占剩余空间的2/0+1+2</span>
+    <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">2</span>;
+  &#125;
+&#125;</code></pre>
+
+<p>页面结构</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+&#125;
+<span class="hljs-selector-tag">header</span>&#123;
+  <span class="hljs-attribute">background</span>: lightblue;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+&#125;
+<span class="hljs-selector-tag">main</span>&#123;
+  <span class="hljs-attribute">background</span>: yellow;
+  <span class="hljs-comment">// 上下定宽，中间自适应</span>
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+&#125;
+<span class="hljs-selector-tag">footer</span>&#123;
+  <span class="hljs-attribute">background</span>: lightgreen;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+&#125;</code></pre>
+
+<h4 id="7-超出空间缩小"><a href="#7-超出空间缩小" class="headerlink" title="7.超出空间缩小"></a>7.超出空间缩小</h4><p>超出弹性盒子缩小比例</p>
+<p>flex-shrink:num;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  * &#123;
+    <span class="hljs-attribute">background</span>: red;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-comment">// 元素总宽高包含padding+border</span>
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-comment">// 背景元素区域从content开始保留</span>
+    <span class="hljs-attribute">background-clip</span>: content-box;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(1)</span> &#123;
+    <span class="hljs-comment">// 第1个元素缩小超出空间的100-(200-100*3)*(0/0+1+3)</span>
+    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(2)</span> &#123;
+    <span class="hljs-comment">// 第2个元素缩小超出空间的100-(200-100*3)*(1/0+1+3)</span>
+    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">1</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(3)</span> &#123;
+    <span class="hljs-comment">// 第3个元素缩小超出空间的100-(200-100*3)*(3/0+1+3)</span>
+    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">3</span>;
+  &#125;
+&#125;</code></pre>
+
+<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<h4 id=""><a href="#" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<h4 id="-2"><a href="#-2" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<h4 id="-3"><a href="#-3" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+
             </div>
             <hr>
             <div>
@@ -247,8 +574,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/06/position/">
-                        <span class="hidden-mobile">定位布局</span>
+                      <a href="/2020/12/13/background/">
+                        <span class="hidden-mobile">背景与渐变</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
