@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      1.9k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      20
+      31
        分钟
     </span>
   
@@ -349,7 +349,7 @@
 
 <p>交叉轴排列</p>
 <p>align-items</p>
-<p>stretch;拉伸不设置弹性元素在主轴上的尺寸，否则不能拉伸。</p>
+<p>stretch;拉伸不设置弹性元素在交叉轴上的尺寸，否则不能拉伸。</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -434,7 +434,7 @@
   &#125;
 &#125;</code></pre>
 
-<h4 id="6-剩余空间分配"><a href="#6-剩余空间分配" class="headerlink" title="6.剩余空间分配"></a>6.剩余空间分配</h4><p>剩余空间分配</p>
+<h4 id="6-弹性元素"><a href="#6-弹性元素" class="headerlink" title="6.弹性元素"></a>6.弹性元素</h4><h5 id="1）剩余空间分配"><a href="#1）剩余空间分配" class="headerlink" title="1）剩余空间分配"></a>1）剩余空间分配</h5><p>剩余空间分配</p>
 <p>flex-grow:num;</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -454,7 +454,7 @@
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
     <span class="hljs-comment">// 元素总宽高包含padding+border</span>
     <span class="hljs-attribute">box-sizing</span>: border-box;
-    <span class="hljs-comment">// 背景元素区域从content开始保留</span>
+    <span class="hljs-comment">// 背景元素区域从content开始保留，现有background再有background-clip</span>
     <span class="hljs-attribute">background-clip</span>: content-box;
     <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
   &#125;
@@ -496,7 +496,7 @@
   <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
 &#125;</code></pre>
 
-<h4 id="7-超出空间缩小"><a href="#7-超出空间缩小" class="headerlink" title="7.超出空间缩小"></a>7.超出空间缩小</h4><p>超出弹性盒子缩小比例</p>
+<h5 id="2）超出空间缩小"><a href="#2）超出空间缩小" class="headerlink" title="2）超出空间缩小"></a>2）超出空间缩小</h5><p>超出弹性盒子缩小比例</p>
 <p>flex-shrink:num;</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -534,25 +534,163 @@
   &#125;
 &#125;</code></pre>
 
-<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><pre><code class="hljs html"></code></pre>
+<h5 id="3）组合定义"><a href="#3）组合定义" class="headerlink" title="3）组合定义"></a>3）组合定义</h5><p>默认flex:0 1 auto;</p>
+<p>flex-grow:0;</p>
+<p>flex-shrink:1;</p>
+<p>权重：min|max&gt;flex-basis&gt;width|height</p>
+<p>flex-basis:auto;</p>
+<h4 id="7-弹性元素排序"><a href="#7-弹性元素排序" class="headerlink" title="7.弹性元素排序"></a>7.弹性元素排序</h4><p>从上到下order减小</p>
+<p>order:num;</p>
+<h4 id="8-定位元素在弹性布局"><a href="#8-定位元素在弹性布局" class="headerlink" title="8.定位元素在弹性布局"></a>8.定位元素在弹性布局</h4><p>绝对定位丢失空间位，弹性布局会把空间位计算在内</p>
+<p>position: absolute;</p>
+<p>相对定位有空间位，会影响后面的元素</p>
+<p>position: relative;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
 
-<pre><code class="hljs less"></code></pre>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">position</span>: relative;
+  * &#123;
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">background</span>: lightblue;
+    <span class="hljs-attribute">background-clip</span>: content-box;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  &#125;
+  <span class="hljs-selector-pseudo">:nth-child(1)</span>&#123;
+    <span class="hljs-comment">// 绝对定位丢失空间位，弹性布局会把空间位计算在内，</span>
+    <span class="hljs-comment">// position: absolute;</span>
+    <span class="hljs-comment">// 相对定位有空间位，会影响后面的元素</span>
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">background</span>: lightgreen;
+    <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">1</span>;
+  &#125;
+&#125;
+</code></pre>
 
-<h4 id=""><a href="#" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+<h4 id="9-弹性布局通用菜单"><a href="#9-弹性布局通用菜单" class="headerlink" title="9.弹性布局通用菜单"></a>9.弹性布局通用菜单</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>main<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>second<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>thrid<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code></pre>
 
-<pre><code class="hljs less"></code></pre>
+<pre><code class="hljs less">*&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+&#125;
+<span class="hljs-selector-tag">main</span> &#123;
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#f3f3f3</span>;
+&#125;
+<span class="hljs-selector-tag">footer</span>&#123;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-around;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#eee</span>;
+  <span class="hljs-selector-tag">section</span>&#123;
+    <span class="hljs-attribute">border-right</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-comment">// h4 ul 列翻转</span>
+    <span class="hljs-attribute">flex-direction</span>: column-reverse;
+    <span class="hljs-comment">// flex可以用在文本上</span>
+    <span class="hljs-selector-tag">h4</span>&#123;
+      <span class="hljs-comment">// 不放、缩，basis:50px</span>
+      <span class="hljs-attribute">flex</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">50px</span>;
+      <span class="hljs-attribute">display</span>: flex;
+      <span class="hljs-attribute">align-items</span>: center;
+      <span class="hljs-attribute">justify-content</span>: center;
+    &#125;
+    <span class="hljs-selector-tag">ul</span>&#123;
+      <span class="hljs-attribute">list-style</span>: none;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+      <span class="hljs-attribute">display</span>: flex;
+      <span class="hljs-attribute">flex-direction</span>: column;
+      <span class="hljs-attribute">align-items</span>:center;
+      <span class="hljs-comment">// 不放大、收缩，basis:50px</span>
+      <span class="hljs-attribute">flex</span>:<span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">50px</span>;
+    &#125;
+  &#125;
+  <span class="hljs-comment">// 去掉最右边的边线</span>
+  <span class="hljs-attribute">section</span>:last-child&#123;
+    <span class="hljs-attribute">border-right</span>: none;
+  &#125;
+&#125;
+</code></pre>
 
-<h4 id="-1"><a href="#-1" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
+<h4 id="10-导航菜单flex"><a href="#10-导航菜单flex" class="headerlink" title="10.导航菜单flex"></a>10.导航菜单flex</h4><p>margin-auto:自动撑满空间</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>home<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>video<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>img<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>user<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></pre>
 
-<pre><code class="hljs less"></code></pre>
-
-<h4 id="-2"><a href="#-2" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
-
-<pre><code class="hljs less"></code></pre>
-
-<h4 id="-3"><a href="#-3" class="headerlink" title="."></a>.</h4><pre><code class="hljs html"></code></pre>
-
-<pre><code class="hljs less"></code></pre>
+<pre><code class="hljs less"><span class="hljs-selector-tag">nav</span>&#123;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#ddd</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">1200px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-selector-tag">ul</span>&#123;
+    <span class="hljs-attribute">list-style</span>: none;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">align-items</span>: center;
+  &#125;
+  <span class="hljs-comment">// 第一个ul margin-right: auto;地洞撑满空间</span>
+  <span class="hljs-attribute">ul</span>:nth-child(<span class="hljs-number">1</span>)&#123;
+    <span class="hljs-attribute">margin-right</span>: auto;
+  &#125;
+  <span class="hljs-attribute">ul</span>:nth-child(<span class="hljs-number">1</span>)&gt;li&#123;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+  &#125;
+  <span class="hljs-attribute">ul</span>:nth-child(<span class="hljs-number">2</span>)&gt;li&#123;
+    <span class="hljs-attribute">background</span>: lightblue;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">align-items</span>: center;
+  &#125;
+&#125;</code></pre>
 
 
             </div>
@@ -569,6 +707,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2020/12/18/week/week4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">week4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
