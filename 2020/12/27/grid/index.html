@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3 字
+      2.8k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      47
        分钟
     </span>
   
@@ -227,7 +227,623 @@
             <h1 style="display: none">grid布局</h1>
             
             <div class="markdown-body">
-              <h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1>
+              <h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1><p>1.栅格布局4*4</p>
+<p>template都在开启grid布局的盒子里</p>
+<p>display:grid;</p>
+<p>grid-template-rows:设置行</p>
+<p>grid-template-colums:设置列</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>13<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>14<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>15<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>16<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-comment">// 背景到盒子的content 100-10*2-1*2=78</span>
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-comment">// 元素的总宽高包含到border 100*100</span>
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>2.重复设置栅格结构</p>
+<p>行高1，行高2….，重复x次</p>
+<p>grid-template-rows:repeat(行数，行高);</p>
+<p>grid-template-colums:repeat(列数，列宽);</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-comment">// 行高100px 50px，重复2行</span>
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">2</span>,<span class="hljs-number">100px</span> <span class="hljs-number">50px</span>);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-comment">// 背景到盒子的content 100-10*2-1*2=78</span>
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-comment">// 元素的总宽高包含到border 100*100</span>
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>3.自动填充行列</p>
+<p>行|列自动填充，每个元素宽高为num*num</p>
+<p>grid-template-rows:repeat(auto-fill,num);</p>
+<p>grid-template-colums:repeat(auto-fill,num);</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-comment">// 自动填充行列，元素100*100</span>
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(auto-fill,<span class="hljs-number">100px</span>);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(auto-fill,<span class="hljs-number">100px</span>);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>4.元素尺寸范围minmax()</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-comment">// 3行，元素高度50-100</span>
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,minmax(<span class="hljs-number">50px</span>,<span class="hljs-number">100px</span>));
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(auto-fill,<span class="hljs-number">100px</span>);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>5.栅格间距</p>
+<p>row-gap<br>|column-gap&lt;==&gt;gap</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">gap</span>:<span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>6.栅格编号线</p>
+<p>行起始线：grid-row-start:num; </p>
+<p>行终止线：grid-row-end:num;</p>
+<p>列起始线：grid-column-start:num;</p>
+<p>列终止线：grid-column-end:num;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-comment">// 行线2-3，列线2-3</span>
+        <span class="hljs-attribute">grid-row-start</span>:<span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-row-end</span>:<span class="hljs-number">3</span>;
+        <span class="hljs-attribute">grid-column-start</span>:<span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">3</span>;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>不规则元素布局</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 第一个元素行线1-3，列线1-2，将元素3挤到空白处</span>
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">1</span>)&#123;
+        <span class="hljs-attribute">grid-row-start</span>:<span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-row-end</span>:<span class="hljs-number">3</span>;
+        <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column-end</span>:<span class="hljs-number">2</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>7.栅格命名</p>
+<p>1）每行|列命名，每行列都要命名</p>
+<p>grid-template-rows:[r1行起] num [r1行终 r2行起] num [r2行终 r3行起] num [r3行终]；</p>
+<p>grid-template-columns: [c1列起] num [c1列终 c2列起] num [c2列终 c3列起] num [c3列终]；</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: [r1-start] <span class="hljs-number">100px</span> [r1-end r2-start] <span class="hljs-number">100px</span> [r2-end r3-start] <span class="hljs-number">100px</span> [r3-end];
+    <span class="hljs-attribute">grid-template-columns</span>: [c1-start] <span class="hljs-number">100px</span> [c1-end c2-start] <span class="hljs-number">100px</span> [c2-end c3-start] <span class="hljs-number">100px</span> [c3-end];
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 2行起-2行终，2列起-2列终</span>
+    <span class="hljs-attribute">div</span>:first-child&#123;
+        <span class="hljs-attribute">grid-row-start</span>:r2-start;
+        <span class="hljs-attribute">grid-row-end</span>:r2-end;
+        <span class="hljs-attribute">grid-column-start</span>:c2-start;
+        <span class="hljs-attribute">grid-column-end</span>:c2-end;
+    &#125;
+&#125;</code></pre>
+
+<p>2）重复栅格命名，行列只命名一次</p>
+<p>n行|列，每行|列高度num，栅格线每行|列起始、终止命名为括号里的内容</p>
+<p>grid-template-rows:repeat(n, [行起] num [行终])</p>
+<p>grid-template-columns:(n, [列起] num [列终])</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-comment">// 重复3行|列等分</span>
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,[r-start] <span class="hljs-number">1</span>fr [r-end]); 
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,[c-start] <span class="hljs-number">1</span>fr[c-end]);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 1行起-1行终，1列起-3列终</span>
+    <span class="hljs-attribute">div</span>:first-child&#123;
+        <span class="hljs-attribute">grid-row-start</span>: r-start <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-row-end</span>: r-end <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column-start</span>: c-start <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column-end</span>: c-end <span class="hljs-number">3</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>3）栅格线数字命名，只数栅格线数字序号</p>
+<p>不写grid-x-start，默认偏移1格</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr); 
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 数字命名只数栅格线数字序号，行线：1-2，列线：1-4</span>
+    <span class="hljs-attribute">div</span>:first-child&#123;
+        <span class="hljs-attribute">grid-row-start</span>:<span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-row-end</span>:<span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column-end</span>:<span class="hljs-number">4</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>4）偏移量命名</p>
+<p>行|列偏移num：grid-x-start:span num;</p>
+<p>栅格线命名只加grid-x-end|grid-x-start，默认偏移一格；</p>
+<p>偏移量span同时加在start|end上</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr); 
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 行end：3，列end：4，起始start同时偏移2</span>
+    <span class="hljs-attribute">div</span>:first-child&#123;
+        <span class="hljs-attribute">grid-row-start</span>:span <span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-row-end</span>:<span class="hljs-number">3</span>;
+        <span class="hljs-attribute">grid-column-start</span>:span <span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-column-end</span>:<span class="hljs-number">4</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>5）元素定位简写</p>
+<p>行start：x，end：y        grid-row:x/y;</p>
+<p>列start：x，end：y        grid-column:x/y</p>
+<p>less使用grid元素定位简写会被计算，要跟偏移量同时使用；</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr); 
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 行start：1，span 1；列start：1，span 3</span>
+    <span class="hljs-attribute">div</span>:first-child&#123;
+        <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span>/span <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span>/span <span class="hljs-number">3</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>eg.不规则布局(小米首页)</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr); 
+    <span class="hljs-attribute">grid-template-columns</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-comment">// 行start：1，span 3；列start：1，span 1</span>
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">1</span>)&#123;
+        <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span>/span <span class="hljs-number">3</span>;
+    &#125;
+    <span class="hljs-comment">// 行start：1，span 2；列start：2，span 2</span>
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">2</span>)&#123;
+        <span class="hljs-attribute">grid-row</span>:<span class="hljs-number">1</span>/span <span class="hljs-number">2</span>;
+        <span class="hljs-attribute">grid-column</span>:<span class="hljs-number">2</span>/span <span class="hljs-number">2</span>;
+    &#125;
+    <span class="hljs-comment">// 计算完1、2位置3被挤到行3 span 1的位置；列start：2，span 2</span>
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">3</span>)&#123;
+        <span class="hljs-attribute">grid-column</span>:<span class="hljs-number">2</span>/span <span class="hljs-number">2</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>6）区域命名</p>
+<p>grid-area:行/列/行/列；</p>
+<p>less会被计算成值，使用区域定位的命名</p>
+<p>grid-template-rows:repeat(3,[r] 1fr);</p>
+<p>grid-template-columns:repeat(3,[c] 1fr);</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-comment">// 区域定位的命名</span>
+    <span class="hljs-attribute">grid-template-rows</span>:repeat(<span class="hljs-number">3</span>,[r]<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>:repeat(<span class="hljs-number">3</span>,[c]<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">box-sizing</span>:border-box;
+        <span class="hljs-attribute">grid-area</span>: r <span class="hljs-number">2</span>/ c <span class="hljs-number">2</span>/ r <span class="hljs-number">3</span>/ c <span class="hljs-number">3</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>7）区域模板命名</p>
+<p>父元素：</p>
+<p>grid-template-rows:m行;</p>
+<p>grid-template-colunms:n列;</p>
+<p>grid-template-areas: m行n列;</p>
+<p>子元素：</p>
+<p>grid-area:对应父元素中区域的名字</p>
+<p>eg.不规则布局(小米首页)</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">grid-template-columns</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr;
+    <span class="hljs-comment">// 三行两列命名</span>
+    <span class="hljs-attribute">grid-template-areas</span>:<span class="hljs-string">&#x27;header header&#x27;</span>
+    <span class="hljs-string">&#x27;nav main&#x27;</span>
+    <span class="hljs-string">&#x27;footer footer&#x27;</span>;
+    <span class="hljs-selector-tag">header</span>,<span class="hljs-selector-tag">nav</span>,<span class="hljs-selector-tag">main</span>,<span class="hljs-selector-tag">footer</span>&#123;
+        <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+    &#125;
+    <span class="hljs-comment">// 各部分区域名</span>
+    <span class="hljs-selector-tag">header</span>&#123;
+        <span class="hljs-attribute">grid-area</span>: header;
+    &#125;
+    <span class="hljs-selector-tag">nav</span>&#123;
+        <span class="hljs-attribute">grid-area</span>:nav;
+    &#125;
+    <span class="hljs-selector-tag">main</span>&#123;
+        <span class="hljs-attribute">grid-area</span>:main;
+    &#125;
+    <span class="hljs-selector-tag">footer</span>&#123;
+        <span class="hljs-attribute">grid-area</span>:footer;
+    &#125;
+&#125;</code></pre>
+
+<p>占位符优化区域模板命名</p>
+<p>区域模板中名字相同会被合并区域；</p>
+<p>不同用’.’占位，每个区域是独立的空间；</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">grid-template-columns</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr;
+    <span class="hljs-comment">// 三行两列命名, 引号内区域名称相同会被合并;</span>
+    <span class="hljs-comment">// &#x27;. .&#x27;占位不会合并区域</span>
+    <span class="hljs-attribute">grid-template-areas</span>:<span class="hljs-string">&#x27;header header&#x27;</span>
+    <span class="hljs-string">&#x27;. .&#x27;</span>
+    <span class="hljs-string">&#x27;footer footer&#x27;</span>;
+    <span class="hljs-selector-tag">header</span>,<span class="hljs-selector-tag">nav</span>,<span class="hljs-selector-tag">main</span>,<span class="hljs-selector-tag">footer</span>&#123;
+        <span class="hljs-comment">// 现有background才能background-clip</span>
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+    &#125;
+    <span class="hljs-selector-tag">header</span>&#123;
+        <span class="hljs-attribute">grid-area</span>: header;
+    &#125;
+    <span class="hljs-selector-tag">footer</span>&#123;
+        <span class="hljs-attribute">grid-area</span>: footer;
+    &#125;
+&#125;</code></pre>
+
+<p>8）区域栅格线命名</p>
+<p>每条栅格线名称：区域模板中区域命名-start|end</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">60px</span>;
+    <span class="hljs-attribute">grid-template-columns</span>:<span class="hljs-number">60px</span> <span class="hljs-number">1</span>fr;
+    <span class="hljs-comment">// 三行两列命名</span>
+    <span class="hljs-attribute">grid-template-areas</span>:<span class="hljs-string">&#x27;header header&#x27;</span>
+    <span class="hljs-string">&#x27;nav main&#x27;</span>
+    <span class="hljs-string">&#x27;footer footer&#x27;</span>;
+    <span class="hljs-selector-tag">header</span>,<span class="hljs-selector-tag">nav</span>,<span class="hljs-selector-tag">main</span>,<span class="hljs-selector-tag">footer</span>&#123;
+        <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+    &#125;
+    <span class="hljs-comment">// 行：header结束-footer开始</span>
+    <span class="hljs-comment">// 列: nav开始-main结束</span>
+    <span class="hljs-selector-tag">header</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">grid-row</span>: header-end/footer-start;
+        <span class="hljs-attribute">grid-column</span>: nav-start/main-end;
+    &#125;
+&#125;</code></pre>
+
+<p>8.栅格流动</p>
+<p>栅格横向|纵向排列 自动占满空出来的空间：grid-auto-flow: row|column dense;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-attribute">grid-template-columns</span>:repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
+    <span class="hljs-comment">// 行排列 后面的元素自动填满空出来的空间</span>
+    <span class="hljs-attribute">grid-auto-flow</span>: row dense;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">1</span>)&#123;
+        <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span>/span <span class="hljs-number">2</span>;
+    &#125;
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">2</span>)&#123;
+        <span class="hljs-attribute">grid-row</span>:<span class="hljs-number">2</span>/span <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">3</span>/span <span class="hljs-number">1</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>9.栅格对齐</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<p>1）栅格整体对齐与简写</p>
+<p>栅格整体：</p>
+<p>justify-content: 栅格整体主轴对齐方式;</p>
+<p>align-content:栅格整体交叉轴对其方式;</p>
+<p>简写：place-content:align justify;</p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>:repeat(<span class="hljs-number">4</span>,<span class="hljs-number">100px</span>);
+    <span class="hljs-comment">// 栅格整体对齐</span>
+    <span class="hljs-comment">// justify-content: space-around;</span>
+    <span class="hljs-comment">// align-content: center;</span>
+    <span class="hljs-comment">// 栅格整体对齐简写</span>
+    <span class="hljs-attribute">place-content</span>: center space-around;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>2）栅格内元素整体对齐与简写</p>
+<p>栅格整体：</p>
+<p>justify-items:栅格内元素主轴对齐方式;</p>
+<p>align-items:栅格内元素交叉轴对齐方式;</p>
+<p>简写：place-items:align justify; </p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>:repeat(<span class="hljs-number">4</span>,<span class="hljs-number">100px</span>);
+    <span class="hljs-comment">// 栅格内元素整体对齐</span>
+    <span class="hljs-comment">// justify-items: start;</span>
+    <span class="hljs-comment">// align-items:center;</span>
+    <span class="hljs-comment">// 栅格整体对齐简写</span>
+    <span class="hljs-attribute">place-items</span>: center start;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+&#125;</code></pre>
+
+<p>3）栅格元素独立控制对齐与简写</p>
+<p>栅格独立元素内：</p>
+<p>justify-self:栅格元素独立控制主轴对齐方式;</p>
+<p>align-self:栅格元素独立控制交叉轴对齐方式;</p>
+<p>简写：place-self:align justify; </p>
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>:repeat(<span class="hljs-number">4</span>,<span class="hljs-number">100px</span>);
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">background</span>: lightblue;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+        <span class="hljs-attribute">background-clip</span>: content-box;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    &#125;
+    <span class="hljs-attribute">div</span>:nth-child(<span class="hljs-number">3</span>)&#123;
+        <span class="hljs-comment">// 栅格元素独立控制对齐</span>
+        <span class="hljs-comment">// justify-self: end;</span>
+        <span class="hljs-comment">// align-self: center;</span>
+        <span class="hljs-comment">// 栅格元素独立控制对齐简写</span>
+        <span class="hljs-attribute">place-self</span>: center end;
+    &#125;
+&#125;</code></pre>
+
             </div>
             <hr>
             <div>
@@ -242,6 +858,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2020/12/31/week/week6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">week6</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

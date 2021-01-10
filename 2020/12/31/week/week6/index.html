@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>week5 - 老废物乐园</title>
+  <title>week6 - 老废物乐园</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="week5">
+            <span class="h2" id="subtitle" title="week6">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-27 20:29" pubdate>
-        2020年12月27日 晚上
+      <time datetime="2020-12-31 16:08" pubdate>
+        2020年12月31日 下午
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      235 字
+      492 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      7
        分钟
     </span>
   
@@ -224,54 +224,79 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">week5</h1>
+            <h1 style="display: none">week6</h1>
             
             <div class="markdown-body">
-              <h1 id="week5"><a href="#week5" class="headerlink" title="week5"></a>week5</h1><p>1.[[html]简述超链接target属性的取值和作用]</p>
-<p>2.[[css]CSS3新增伪类有哪些并简要描述]</p>
-<p>3.[[js]写一个把字符串大小写切换的方法]</p>
-<h3 id="1-html-简述超链接target属性的取值和作用"><a href="#1-html-简述超链接target属性的取值和作用" class="headerlink" title="1.[[html]简述超链接target属性的取值和作用]"></a>1.[[html]简述超链接target属性的取值和作用]</h3><table>
-<thead>
-<tr>
-<th>target</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>_blank</td>
-<td>点击一次打开一个窗口</td>
-</tr>
-<tr>
-<td>_self</td>
-<td>始终打开自己的窗口</td>
-</tr>
-<tr>
-<td>_new</td>
-<td>点击多次，始终打开一个窗口</td>
-</tr>
-<tr>
-<td>_parent</td>
-<td>打开父框架的窗口。链接的框架不是嵌套的，等同_self</td>
-</tr>
-<tr>
-<td>_top</td>
-<td>打开自己的窗口，会删除所有框架</td>
-</tr>
-</tbody></table>
-<h3 id="2-css-CSS3新增伪类有哪些并简要描述"><a href="#2-css-CSS3新增伪类有哪些并简要描述" class="headerlink" title="2.[[css]CSS3新增伪类有哪些并简要描述]"></a>2.[[css]CSS3新增伪类有哪些并简要描述]</h3><p>:first-child|:last-child|:first-of-type|:last-of-type|:only-child|:only-of-type</p>
-<p>:enabled|:disabled|:checked</p>
-<h3 id="3-js-写一个把字符串大小写切换的方法"><a href="#3-js-写一个把字符串大小写切换的方法" class="headerlink" title="3.[[js]写一个把字符串大小写切换的方法]"></a>3.[[js]写一个把字符串大小写切换的方法]</h3><p>全大写：str.toUpperCase()</p>
-<p>全小写：str.toLowerCase()</p>
-<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleLetter</span>(<span class="hljs-params">str</span>)</span>&#123;
-	<span class="hljs-keyword">return</span> str.split(<span class="hljs-string">&#x27;&#x27;</span>).map(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;
-        <span class="hljs-keyword">if</span>(item===item.toUpperCase())&#123;
-            <span class="hljs-keyword">return</span> item.toLowerCase()
-        &#125;<span class="hljs-keyword">else</span>&#123;
-            <span class="hljs-keyword">return</span> item.toUpperCase()
-        &#125;
-    &#125;).join(<span class="hljs-string">&#x27;&#x27;</span>)
+              <h1 id="week6"><a href="#week6" class="headerlink" title="week6"></a>week6</h1><p>1.[[html]label都有哪些作用？并举相应的例子说明]</p>
+<p>2.[[css]用css创建一个三角形，并简述原理]</p>
+<p>3.[[js]写一个去除制表符和换行符的方法]</p>
+<h3 id="1-html-label都有哪些作用？并举相应的例子说明"><a href="#1-html-label都有哪些作用？并举相应的例子说明" class="headerlink" title="1.[[html]label都有哪些作用？并举相应的例子说明]"></a>1.[[html]label都有哪些作用？并举相应的例子说明]</h3><p>1）label标签for属性与input标签种的id相同，绑定表单，点击label可以获取焦点；</p>
+<p>2）label模拟button</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=&#x27;button&#x27;]</span> &#123;
+  <span class="hljs-attribute">display</span>: none;
 &#125;
-toggleLetter(<span class="hljs-string">&#x27;AsDf&#x27;</span>)</code></pre>
+
+<span class="hljs-selector-tag">label</span> &#123;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#456</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">4px</span> <span class="hljs-number">0</span> rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">3</span>);
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2px</span>;
+&#125;</code></pre>
+
+<p>3）checkbox、radio实现css切换</p>
+<h3 id="2-css-用css创建一个三角形，并简述原理"><a href="#2-css-用css创建一个三角形，并简述原理" class="headerlink" title="2.[[css]用css创建一个三角形，并简述原理]"></a>2.[[css]用css创建一个三角形，并简述原理]</h3><p>border是由4个三角形拼成的，border-width控制三角的大小，</p>
+<p>width:0;height:0;</p>
+<p>border宽度：div中心到四边的宽度</p>
+<p>1）一条横竖边：</p>
+<p>border-横竖边方向：长度 solid color;</p>
+<p>border-两条斜边方向：长度 solid transparent;</p>
+<p>2）两条横竖边：</p>
+<p>若斜边是在三角形的右边，这时候设置top或bottom的直线，和右边的斜线。</p>
+<p>border-top|borde-bottom:长度 solid color;</p>
+<p>border-right:长度 solid transparent；</p>
+<p>若斜边是在三角形的左边，这时候设置top或bottom的直线，和左边的斜线。</p>
+<p>border-top|borde-bottom:长度 solid color;</p>
+<p>border-left:长度 solid transparent；</p>
+<hr>
+<p>带边框的三角型</p>
+<p>黄色三角相对父元素padding绝对定位，父元素宽高为0，内容区域为div的中心，是蓝色三角顶点位置。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">div</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">border-bottom</span>:<span class="hljs-number">40px</span> solid blue;
+    <span class="hljs-attribute">border-left</span>:<span class="hljs-number">40px</span> solid transparent;
+    <span class="hljs-attribute">border-right</span>:<span class="hljs-number">40px</span> solid transparent;
+&#125;
+<span class="hljs-attribute">div</span>::after&#123;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">38px</span> solid yellow;
+    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">38px</span> solid transparent;
+    <span class="hljs-attribute">border-right</span>: <span class="hljs-number">38px</span> solid transparent;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">9px</span>;
+&#125;</code></pre>
+
+
+
+<h3 id="3-js-写一个去除制表符和换行符的方法"><a href="#3-js-写一个去除制表符和换行符的方法" class="headerlink" title="3.[[js]写一个去除制表符和换行符的方法]"></a>3.[[js]写一个去除制表符和换行符的方法]</h3><p>[]：表达式</p>
+<p>\n：换行符</p>
+<p>\t：制表符</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">str</span>) </span>&#123;  
+    <span class="hljs-keyword">return</span> str.replace(<span class="hljs-regexp">/[\n\t]/ig</span>,<span class="hljs-string">&#x27;&#x27;</span>)
+&#125;
+<span class="hljs-keyword">let</span> str=<span class="hljs-string">&#x27;asdf   as\tasd\sasd\n  .&#x27;</span>
+<span class="hljs-built_in">console</span>.log(fn(str))</code></pre>
 
 
             </div>
@@ -289,9 +314,9 @@ toggleLetter(<span class="hljs-string">&#x27;AsDf&#x27;</span>)</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/27/grid/">
+                      <a href="/2021/01/10/week/week7/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">grid布局</span>
+                        <span class="hidden-mobile">week7</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -299,8 +324,8 @@ toggleLetter(<span class="hljs-string">&#x27;AsDf&#x27;</span>)</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/27/selector/">
-                        <span class="hidden-mobile">选择器</span>
+                      <a href="/2020/12/27/grid/">
+                        <span class="hidden-mobile">grid布局</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
