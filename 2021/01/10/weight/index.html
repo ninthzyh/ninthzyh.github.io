@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1 字
+      163 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -227,7 +227,61 @@
             <h1 style="display: none">weight</h1>
             
             <div class="markdown-body">
-              <h1 id="weight"><a href="#weight" class="headerlink" title="weight"></a>weight</h1>
+              <h1 id="weight"><a href="#weight" class="headerlink" title="weight"></a>weight</h1><table>
+<thead>
+<tr>
+<th>规则</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继承</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>*</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>标签|伪元素</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>class|类属性</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>id</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+</tbody></table>
+<p>1.继承权重&lt;*；</p>
+<p>2.权重会继承父级，不会反哺，有些属性不会被继承（border）;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-comment">// 通配符：1</span>
+*&#123;
+    <span class="hljs-attribute">color</span>:green;
+&#125;
+<span class="hljs-comment">// 继承：null，div权重继承父级</span>
+<span class="hljs-comment">// 继承权重&lt;*，最后使用*的样式</span>
+<span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">color</span>:red;
+    <span class="hljs-comment">// border不会被div继承，div中的样式也不会反哺父级</span>
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid;
+&#125;</code></pre>
+
+<p>3.行内样式不要轻易使用；</p>
+<p>4.!import强制提升权重；</p>
+<p>5.权重相同使用后出现的；</p>
+<p>6.权重可以叠加使用；</p>
+
             </div>
             <hr>
             <div>
@@ -256,6 +310,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/11/text/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">text</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

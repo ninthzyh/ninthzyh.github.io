@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>分类 - css - 老废物乐园</title>
+  <title>text - 老废物乐园</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -146,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类 - css">
+            <span class="h2" id="subtitle" title="text">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-11 09:15" pubdate>
+        2021年1月11日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      270 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,91 +214,175 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 9 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/11/text/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">text</span>
-      <time style="float: right;">01-11</time>
-    </a>
-  
-    
-    <a href="/2021/01/11/media/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">media</span>
-      <time style="float: right;">01-11</time>
-    </a>
-  
-    
-    <a href="/2021/01/10/weight/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">weight</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-    
-      
-      <p class="h5">2020</p>
-    
-    <a href="/2020/12/27/grid/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">grid布局</span>
-      <time style="float: right;">12-27</time>
-    </a>
-  
-    
-    <a href="/2020/12/27/selector/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">选择器</span>
-      <time style="float: right;">12-27</time>
-    </a>
-  
-    
-    <a href="/2020/12/13/flex/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">弹性布局</span>
-      <time style="float: right;">12-13</time>
-    </a>
-  
-    
-    <a href="/2020/12/13/background/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">背景与渐变</span>
-      <time style="float: right;">12-13</time>
-    </a>
-  
-    
-    <a href="/2020/12/06/position/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">定位布局</span>
-      <time style="float: right;">12-06</time>
-    </a>
-  
-    
-    <a href="/2020/11/30/float/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">浮动布局</span>
-      <time style="float: right;">11-30</time>
-    </a>
-  
-</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">text</h1>
+            
+            <div class="markdown-body">
+              <h1 id="text"><a href="#text" class="headerlink" title="text"></a>text</h1><p>1.自定义字体</p>
+<p>字体：font-family: 字体1,字体2,…;</p>
+<p>自定义: </p>
+<p>@font-face{</p>
+<p>​    font-family:自定义字体名;</p>
+<p>​    src:url(‘path’) format(字体格式);</p>
+<p>}</p>
+<p>font-family:自定义字体名;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>zyh<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-keyword">@font-face</span>&#123;
+    <span class="hljs-attribute">font-family</span>: zyh;
+    <span class="hljs-attribute">src</span>: url(<span class="hljs-string">&#x27;./ADOBEGOTHICSTD-BOLD.OTF&#x27;</span>) format(<span class="hljs-string">&#x27;opentype&#x27;</span>);
+&#125;
+<span class="hljs-selector-tag">div</span>&#123;
+    <span class="hljs-comment">// 自定义字体</span>
+    <span class="hljs-comment">// font-family: zyh;</span>
+    <span class="hljs-comment">// 字体库中字体</span>
+    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Courier New&#x27;</span>, Courier, monospace;
+&#125;</code></pre>
+
+<p>2.字重&amp;字号</p>
+<p>字重：font-weight:bold|lighter|normal|num(100-900);</p>
+<p>字号：font-size:small|meidum|large|%|px|em;</p>
+<p>%|em：子元素的字号可以参考父元素的字号显示相对大小，1em=100%</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>zyh<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+    <span class="hljs-attribute">font-size</span>:<span class="hljs-number">30px</span>;
+    <span class="hljs-selector-tag">div</span>&#123;
+        <span class="hljs-attribute">font-weight</span>: lighter;
+        <span class="hljs-comment">// 相对父元素的2倍，2em</span>
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">200%</span>;
+    &#125;
+&#125;</code></pre>
+
+<p>3.颜色&amp;行高</p>
+<p>颜色：color:#|rgba;</p>
+<p>行高：响应式布局行高用em，能够自适应</p>
+<p>line-height:px|em;</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum modi optio deserunt assumenda repellat impedit doloremque unde error nam, labore deleniti enim ab quisquam vel harum iure. Beatae, ex laborum.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<pre><code class="hljs less"><span class="hljs-selector-tag">div</span>&#123;
+    <span class="hljs-attribute">color</span>:red;
+    <span class="hljs-comment">// 响应式布局行高用em，能够自适应</span>
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1em</span>;
+&#125;</code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
+
+<p>.</p>
+<pre><code class="hljs html"></code></pre>
+
+<pre><code class="hljs less"></code></pre>
 
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/css/">css</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/css/">css</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/11/media/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">media</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/10/weight/">
+                        <span class="hidden-mobile">weight</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -328,9 +465,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 

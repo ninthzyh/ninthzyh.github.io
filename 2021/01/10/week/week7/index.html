@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      96 字
+      211 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -230,7 +230,36 @@
               <h1 id="week7"><a href="#week7" class="headerlink" title="week7"></a>week7</h1><p>1.[iframe框架都有哪些优缺点？]</p>
 <p>2.[[css]简述你对BFC规范的理解]</p>
 <p>3.[[js]统计某一字符或字符串在另一个字符串中出现的次数]</p>
-<h3 id="1-iframe框架都有哪些优缺点？"><a href="#1-iframe框架都有哪些优缺点？" class="headerlink" title="1.[iframe框架都有哪些优缺点？]"></a>1.[iframe框架都有哪些优缺点？]</h3><h3 id="2-css-简述你对BFC规范的理解"><a href="#2-css-简述你对BFC规范的理解" class="headerlink" title="2.[[css]简述你对BFC规范的理解]"></a>2.[[css]简述你对BFC规范的理解]</h3><h3 id="3-js-统计某一字符或字符串在另一个字符串中出现的次数"><a href="#3-js-统计某一字符或字符串在另一个字符串中出现的次数" class="headerlink" title="3.[[js]统计某一字符或字符串在另一个字符串中出现的次数]"></a>3.[[js]统计某一字符或字符串在另一个字符串中出现的次数]</h3>
+<h3 id="1-iframe框架都有哪些优缺点？"><a href="#1-iframe框架都有哪些优缺点？" class="headerlink" title="1.[iframe框架都有哪些优缺点？]"></a>1.[iframe框架都有哪些优缺点？]</h3><h3 id="2-css-简述你对BFC规范的理解"><a href="#2-css-简述你对BFC规范的理解" class="headerlink" title="2.[[css]简述你对BFC规范的理解]"></a>2.[[css]简述你对BFC规范的理解]</h3><h3 id="3-js-统计某一字符或字符串在另一个字符串中出现的次数"><a href="#3-js-统计某一字符或字符串在另一个字符串中出现的次数" class="headerlink" title="3.[[js]统计某一字符或字符串在另一个字符串中出现的次数]"></a>3.[[js]统计某一字符或字符串在另一个字符串中出现的次数]</h3><p>1）递归</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;asdf.qert.aass&quot;</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countFn</span>(<span class="hljs-params">str, i</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> idx = str.indexOf(i);
+    <span class="hljs-keyword">if</span> (idx != -<span class="hljs-number">1</span>) &#123;
+        count++;
+        str = str.substr(idx + <span class="hljs-number">1</span>);
+        countFn(str, i);
+    &#125;
+    <span class="hljs-keyword">return</span> count;
+&#125;
+<span class="hljs-keyword">let</span> c = countFn(str, <span class="hljs-string">&quot;a&quot;</span>);
+<span class="hljs-built_in">console</span>.log(c);</code></pre>
+
+<p>2）split</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;asdf.qert.aass&quot;</span>;
+<span class="hljs-built_in">console</span>.log(str.split(<span class="hljs-string">&#x27;a&#x27;</span>).length-<span class="hljs-number">1</span>)</code></pre>
+
+<p>3）正则</p>
+<pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;tools.jb51.net&quot;</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">patchFn</span>(<span class="hljs-params">re, str</span>) </span>&#123;
+    <span class="hljs-comment">// 正则要转成RegExp对象</span>
+    <span class="hljs-keyword">let</span> newRe = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(re,<span class="hljs-string">&#x27;ig&#x27;</span>);
+    <span class="hljs-keyword">return</span> str.match(newRe).length;
+&#125;
+<span class="hljs-keyword">let</span> c = patchFn(<span class="hljs-string">&quot;t&quot;</span>, str)
+<span class="hljs-built_in">console</span>.log(c);</code></pre>
+
+
             </div>
             <hr>
             <div>
