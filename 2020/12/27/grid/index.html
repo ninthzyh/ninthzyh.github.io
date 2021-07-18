@@ -227,8 +227,7 @@
             <h1 style="display: none">grid布局</h1>
             
             <div class="markdown-body">
-              <h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1><p>1.栅格布局4*4</p>
-<p>template都在开启grid布局的盒子里</p>
+              <h1 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h1><h4 id="1-栅格布局4-4"><a href="#1-栅格布局4-4" class="headerlink" title="1.栅格布局4*4"></a>1.栅格布局4*4</h4><p>template都在开启grid布局的盒子里</p>
 <p>display:grid;</p>
 <p>grid-template-rows:设置行</p>
 <p>grid-template-colums:设置列</p>
@@ -271,8 +270,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>2.重复设置栅格结构</p>
-<p>行高1，行高2….，重复x次</p>
+<h4 id="2-重复设置栅格结构"><a href="#2-重复设置栅格结构" class="headerlink" title="2.重复设置栅格结构"></a>2.重复设置栅格结构</h4><p>行高1，行高2….，重复x次</p>
 <p>grid-template-rows:repeat(行数，行高);</p>
 <p>grid-template-colums:repeat(列数，列宽);</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
@@ -295,8 +293,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>3.自动填充行列</p>
-<p>行|列自动填充，每个元素宽高为num*num</p>
+<h4 id="3-自动填充行列"><a href="#3-自动填充行列" class="headerlink" title="3.自动填充行列"></a>3.自动填充行列</h4><p>行|列自动填充，每个元素宽高为num*num</p>
 <p>grid-template-rows:repeat(auto-fill,num);</p>
 <p>grid-template-colums:repeat(auto-fill,num);</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
@@ -328,8 +325,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>4.元素尺寸范围minmax()</p>
-<pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
+<h4 id="4-元素尺寸范围minmax"><a href="#4-元素尺寸范围minmax" class="headerlink" title="4.元素尺寸范围minmax()"></a>4.元素尺寸范围minmax()</h4><pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
     <span class="hljs-attribute">display</span>: grid;
     <span class="hljs-comment">// 3行，元素高度50-100</span>
     <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,minmax(<span class="hljs-number">50px</span>,<span class="hljs-number">100px</span>));
@@ -346,8 +342,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>5.栅格间距</p>
-<p>row-gap<br>|column-gap&lt;==&gt;gap</p>
+<h4 id="5-栅格间距"><a href="#5-栅格间距" class="headerlink" title="5.栅格间距"></a>5.栅格间距</h4><p>row-gap<br>|column-gap&lt;==&gt;gap</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
     <span class="hljs-attribute">display</span>: grid;
     <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr);
@@ -364,8 +359,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>6.栅格编号线</p>
-<p>行起始线：grid-row-start:num; </p>
+<h4 id="6-栅格编号线"><a href="#6-栅格编号线" class="headerlink" title="6.栅格编号线"></a>6.栅格编号线</h4><p>行起始线：grid-row-start:num; </p>
 <p>行终止线：grid-row-end:num;</p>
 <p>列起始线：grid-column-start:num;</p>
 <p>列终止线：grid-column-end:num;</p>
@@ -422,9 +416,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>7.栅格命名</p>
-<p>1）每行|列命名，每行列都要命名</p>
-<p>grid-template-rows:[r1行起] num [r1行终 r2行起] num [r2行终 r3行起] num [r3行终]；</p>
+<h4 id="7-栅格命名"><a href="#7-栅格命名" class="headerlink" title="7.栅格命名"></a>7.栅格命名</h4><h5 id="1）每行-列命名，每行列都要命名"><a href="#1）每行-列命名，每行列都要命名" class="headerlink" title="1）每行|列命名，每行列都要命名"></a>1）每行|列命名，每行列都要命名</h5><p>grid-template-rows:[r1行起] num [r1行终 r2行起] num [r2行终 r3行起] num [r3行终]；</p>
 <p>grid-template-columns: [c1列起] num [c1列终 c2列起] num [c2列终 c3列起] num [c3列终]；</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -452,8 +444,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>2）重复栅格命名，行列只命名一次</p>
-<p>n行|列，每行|列高度num，栅格线每行|列起始、终止命名为括号里的内容</p>
+<h5 id="2）重复栅格命名，行列只命名一次"><a href="#2）重复栅格命名，行列只命名一次" class="headerlink" title="2）重复栅格命名，行列只命名一次"></a>2）重复栅格命名，行列只命名一次</h5><p>n行|列，每行|列高度num，栅格线每行|列起始、终止命名为括号里的内容</p>
 <p>grid-template-rows:repeat(n, [行起] num [行终])</p>
 <p>grid-template-columns:(n, [列起] num [列终])</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
@@ -479,8 +470,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>3）栅格线数字命名，只数栅格线数字序号</p>
-<p>不写grid-x-start，默认偏移1格</p>
+<h5 id="3）栅格线数字命名，只数栅格线数字序号"><a href="#3）栅格线数字命名，只数栅格线数字序号" class="headerlink" title="3）栅格线数字命名，只数栅格线数字序号"></a>3）栅格线数字命名，只数栅格线数字序号</h5><p>不写grid-x-start，默认偏移1格</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
     <span class="hljs-attribute">display</span>: grid;
     <span class="hljs-attribute">grid-template-rows</span>: repeat(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>fr); 
@@ -503,8 +493,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>4）偏移量命名</p>
-<p>行|列偏移num：grid-x-start:span num;</p>
+<h5 id="4）偏移量命名"><a href="#4）偏移量命名" class="headerlink" title="4）偏移量命名"></a>4）偏移量命名</h5><p>行|列偏移num：grid-x-start:span num;</p>
 <p>栅格线命名只加grid-x-end|grid-x-start，默认偏移一格；</p>
 <p>偏移量span同时加在start|end上</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
@@ -529,8 +518,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>5）元素定位简写</p>
-<p>行start：x，end：y        grid-row:x/y;</p>
+<h5 id="5）元素定位简写"><a href="#5）元素定位简写" class="headerlink" title="5）元素定位简写"></a>5）元素定位简写</h5><p>行start：x，end：y        grid-row:x/y;</p>
 <p>列start：x，end：y        grid-column:x/y</p>
 <p>less使用grid元素定位简写会被计算，要跟偏移量同时使用；</p>
 <pre><code class="hljs less"><span class="hljs-selector-tag">article</span>&#123;
@@ -588,8 +576,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>6）区域命名</p>
-<p>grid-area:行/列/行/列；</p>
+<h5 id="6）区域命名"><a href="#6）区域命名" class="headerlink" title="6）区域命名"></a>6）区域命名</h5><p>grid-area:行/列/行/列；</p>
 <p>less会被计算成值，使用区域定位的命名</p>
 <p>grid-template-rows:repeat(3,[r] 1fr);</p>
 <p>grid-template-columns:repeat(3,[c] 1fr);</p>
@@ -614,8 +601,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>7）区域模板命名</p>
-<p>父元素：</p>
+<h5 id="7）区域模板命名"><a href="#7）区域模板命名" class="headerlink" title="7）区域模板命名"></a>7）区域模板命名</h5><p>父元素：</p>
 <p>grid-template-rows:m行;</p>
 <p>grid-template-colunms:n列;</p>
 <p>grid-template-areas: m行n列;</p>
@@ -689,8 +675,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>8）区域栅格线命名</p>
-<p>每条栅格线名称：区域模板中区域命名-start|end</p>
+<h5 id="8）区域栅格线命名"><a href="#8）区域栅格线命名" class="headerlink" title="8）区域栅格线命名"></a>8）区域栅格线命名</h5><p>每条栅格线名称：区域模板中区域命名-start|end</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
@@ -722,8 +707,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>8.栅格流动</p>
-<p>栅格横向|纵向排列 自动占满空出来的空间：grid-auto-flow: row|column dense;</p>
+<h4 id="8-栅格流动"><a href="#8-栅格流动" class="headerlink" title="8.栅格流动"></a>8.栅格流动</h4><p>栅格横向|纵向排列 自动占满空出来的空间：grid-auto-flow: row|column dense;</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -756,16 +740,14 @@
     &#125;
 &#125;</code></pre>
 
-<p>9.栅格对齐</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+<h4 id="9-栅格对齐"><a href="#9-栅格对齐" class="headerlink" title="9.栅格对齐"></a>9.栅格对齐</h4><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span></code></pre>
 
-<p>1）栅格整体对齐与简写</p>
-<p>栅格整体：</p>
+<h5 id="1）栅格整体对齐与简写"><a href="#1）栅格整体对齐与简写" class="headerlink" title="1）栅格整体对齐与简写"></a>1）栅格整体对齐与简写</h5><p>栅格整体：</p>
 <p>justify-content: 栅格整体主轴对齐方式;</p>
 <p>align-content:栅格整体交叉轴对其方式;</p>
 <p>简写：place-content:align justify;</p>
@@ -790,8 +772,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>2）栅格内元素整体对齐与简写</p>
-<p>栅格整体：</p>
+<h5 id="2）栅格内元素整体对齐与简写"><a href="#2）栅格内元素整体对齐与简写" class="headerlink" title="2）栅格内元素整体对齐与简写"></a>2）栅格内元素整体对齐与简写</h5><p>栅格整体：</p>
 <p>justify-items:栅格内元素主轴对齐方式;</p>
 <p>align-items:栅格内元素交叉轴对齐方式;</p>
 <p>简写：place-items:align justify; </p>
@@ -816,8 +797,7 @@
     &#125;
 &#125;</code></pre>
 
-<p>3）栅格元素独立控制对齐与简写</p>
-<p>栅格独立元素内：</p>
+<h5 id="3）栅格元素独立控制对齐与简写"><a href="#3）栅格元素独立控制对齐与简写" class="headerlink" title="3）栅格元素独立控制对齐与简写"></a>3）栅格元素独立控制对齐与简写</h5><p>栅格独立元素内：</p>
 <p>justify-self:栅格元素独立控制主轴对齐方式;</p>
 <p>align-self:栅格元素独立控制交叉轴对齐方式;</p>
 <p>简写：place-self:align justify; </p>

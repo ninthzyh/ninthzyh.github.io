@@ -1,0 +1,1554 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>scss - 老废物乐园</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>GG.Bond</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="scss">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-31 21:28" pubdate>
+        2021年5月31日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      62
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">scss</h1>
+            
+            <div class="markdown-body">
+              <h1 id="scss"><a href="#scss" class="headerlink" title="scss"></a>scss</h1><h4 id="1-历史"><a href="#1-历史" class="headerlink" title="1.历史"></a>1.历史</h4><h5 id="1）css预编译器出现的原因："><a href="#1）css预编译器出现的原因：" class="headerlink" title="1）css预编译器出现的原因："></a>1）css预编译器出现的原因：</h5><p>css只有字面量，没有变量（现在有）无法复用；</p>
+<p>无法嵌套代码冗长；</p>
+<h5 id="2）scss-sass（sass官方实现是ruby）："><a href="#2）scss-sass（sass官方实现是ruby）：" class="headerlink" title="2）scss/sass（sass官方实现是ruby）："></a>2）scss/sass（sass官方实现是ruby）：</h5><p>scss是css的超集，最接近css写法，sass升级版，兼容css可以在scss文件中import导入css；</p>
+<p>sass（花括号、分号）；</p>
+<p>sass（缩进）；</p>
+<h4 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>开发编译（生成css）</th>
+<th>压缩编译（生成css）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/* */</td>
+<td>注释还在</td>
+<td>注释不在</td>
+</tr>
+<tr>
+<td>//</td>
+<td>注释不在</td>
+<td>注释不在</td>
+</tr>
+<tr>
+<td>/*! */（注释中增加版权信息）</td>
+<td>注释还在</td>
+<td>注释还在</td>
+</tr>
+</tbody></table>
+<h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><h5 id="1）定义"><a href="#1）定义" class="headerlink" title="1）定义"></a>1）定义</h5><p>$变量名；命名规则（字母|数字|中划线-）</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$width</span>: <span class="hljs-number">1600px</span>;
+<span class="hljs-variable">$pen-size</span>: <span class="hljs-number">3em</span>;</code></pre>
+
+<h5 id="2）使用"><a href="#2）使用" class="headerlink" title="2）使用"></a>2）使用</h5><p>定义好的变量放在要使用的位置</p>
+<pre><code class="hljs scss"><span class="hljs-selector-id">#app</span>&#123;
+    <span class="hljs-attribute">height</span>:<span class="hljs-variable">$width</span>;
+    <span class="hljs-attribute">font-size</span>:<span class="hljs-variable">$pen-size</span>;
+&#125;</code></pre>
+
+<h5 id="3）作用域"><a href="#3）作用域" class="headerlink" title="3）作用域"></a>3）作用域</h5><p>a.变量支持块级作用域，嵌套外的是全局变量，嵌套内是局部变量；</p>
+<p>b.局部作用域转全局作用域，声明!global;</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$width1</span>:<span class="hljs-number">10em</span>;
+<span class="hljs-selector-id">#foo</span>&#123;
+    <span class="hljs-comment">// !global将局部变量转换为全局变量</span>
+    <span class="hljs-variable">$width</span>:<span class="hljs-number">5em</span> !global;
+    <span class="hljs-comment">// width:5em;</span>
+    <span class="hljs-attribute">width</span>:<span class="hljs-variable">$width</span>;
+    <span class="hljs-comment">// heigth:10em; 使用全局变量width:10em;</span>
+    <span class="hljs-attribute">height</span>:<span class="hljs-variable">$width</span>;
+&#125;
+<span class="hljs-selector-id">#bar</span>&#123;
+    <span class="hljs-comment">// width:5em; !global将局部变量转换为全局变量</span>
+    <span class="hljs-attribute">width</span>:<span class="hljs-variable">$width</span>;
+&#125;</code></pre>
+
+<h4 id="4-数据类型"><a href="#4-数据类型" class="headerlink" title="4.数据类型"></a>4.数据类型</h4><table>
+<thead>
+<tr>
+<th>数字</th>
+<th><code>1，2.5，10px，5a</code></th>
+<th>1.有单位也是数字；<br />2.不是单位的也会看作数组，能通过编译，∵scss是弱类型，可能会产生其他错误；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符串</td>
+<td><code>“foo”，‘foo’，foo</code></td>
+<td>1.有引号字符串（单双引号）引号中包含空格；<br />2.无引号字符串，引号中不包含空格；</td>
+</tr>
+<tr>
+<td>颜色</td>
+<td><code>red，#fff，rgba(255,0,0,0.5)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>布尔型</td>
+<td>`true</td>
+<td>false`</td>
+</tr>
+<tr>
+<td>空值</td>
+<td><code>null</code></td>
+<td>逻辑判断中用</td>
+</tr>
+<tr>
+<td>数组</td>
+<td><code>1.5em 1em 0 2em, Helvetica, Arial, sans-serif</code></td>
+<td>用空格</td>
+</tr>
+<tr>
+<td>映射</td>
+<td><code>(key1:value1,key2:value2)</code></td>
+<td>对象（maps）</td>
+</tr>
+</tbody></table>
+<p>判断数据类型：type-of($value)</p>
+<h5 id="1）数字（Number）"><a href="#1）数字（Number）" class="headerlink" title="1）数字（Number）"></a>1）数字（Number）</h5><p>带单位（开头数字后跟字母）|不带单位</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$my-age</span>: <span class="hljs-number">19</span>;
+<span class="hljs-variable">$your-age</span>: <span class="hljs-number">19.5</span>;
+<span class="hljs-variable">$height</span>: <span class="hljs-number">120px</span>;
+
+<span class="hljs-comment">// 注：单位会和数字当做一个整体，进行算数运算</span></code></pre>
+
+<h5 id="2）字符串-String"><a href="#2）字符串-String" class="headerlink" title="2）字符串(String)"></a>2）字符串(String)</h5><p>带引号|不带引号</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$name</span>: <span class="hljs-string">&#x27;Tom Bob&#x27;</span>;
+<span class="hljs-variable">$container</span>: <span class="hljs-string">&quot;top bottom&quot;</span>;
+<span class="hljs-variable">$what</span>: heart;
+
+<span class="hljs-comment">// 注：在编译 CSS 文件时不会改变其类型。只有一种情况例外，使用 `#&#123;&#125;` (interpolation) 时，有引号字符串将被编译为无引号字符串，这样便于在 mixin 中引用选择器名</span></code></pre>
+
+<h5 id="3）颜色-Color"><a href="#3）颜色-Color" class="headerlink" title="3）颜色(Color)"></a>3）颜色(Color)</h5><p>css只有十六进制|RGBA|RGB|HSL|<br>HSLA</p>
+<p>scss有颜色函数</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$color0</span>:green;
+<span class="hljs-variable">$color1</span>:lighten(<span class="hljs-variable">$color</span>,<span class="hljs-number">15%</span>);
+<span class="hljs-variable">$color2</span>:(green+red);</code></pre>
+
+<h5 id="4）布尔-Booleans"><a href="#4）布尔-Booleans" class="headerlink" title="4）布尔(Booleans)"></a>4）布尔(Booleans)</h5><pre><code class="hljs scss"><span class="hljs-variable">$a</span>:true;
+<span class="hljs-variable">$b</span>:false;
+
+<span class="hljs-comment">// 注：自身是false|null返回false，否则返回true</span></code></pre>
+
+<h5 id="5）空值-Null"><a href="#5）空值-Null" class="headerlink" title="5）空值(Null)"></a>5）空值(Null)</h5><pre><code class="hljs scss"><span class="hljs-variable">$value</span>:null;
+
+<span class="hljs-comment">// 注：空值不能参与算数运算</span>
+<span class="hljs-comment">// 空值编译后，编译位置为空</span></code></pre>
+
+<h5 id="6）数组-List"><a href="#6）数组-List" class="headerlink" title="6）数组(List)"></a>6）数组(List)</h5><p>数组用空格|逗号分隔，索引从1开始，独立的数看作包含一个值的数组</p>
+<pre><code class="hljs scss"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">list=[1,2,3,4]</span>
+<span class="hljs-comment">list2=[[1,2],[3,4]]</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-variable">$list</span>:<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>;
+<span class="hljs-comment">// 二维数组逗号和空格交替使用，或者二维数组中的数组用小括号隔开</span>
+<span class="hljs-variable">$list2</span>:<span class="hljs-number">1</span> <span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-number">4</span>;
+<span class="hljs-variable">$list2</span>:(<span class="hljs-number">1</span> <span class="hljs-number">2</span>) (<span class="hljs-number">3</span> <span class="hljs-number">4</span>);</code></pre>
+
+<h5 id="7）映射-Maps"><a href="#7）映射-Maps" class="headerlink" title="7）映射(Maps)"></a>7）映射(Maps)</h5><p>Maps必须被圆括号包围，可以映射任何类型键值对（任何类型，包括内嵌maps，不过不推荐这种内嵌方式）</p>
+<pre><code class="hljs scss"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">map=&#123;</span>
+<span class="hljs-comment">	key:1</span>
+<span class="hljs-comment">&#125;</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-comment">// 对象用小括号包裹</span>
+<span class="hljs-variable">$map</span>:(key:<span class="hljs-number">1</span>);</code></pre>
+
+<h4 id="5-运算"><a href="#5-运算" class="headerlink" title="5.运算"></a>5.运算</h4><p>所有数据类型进行运算要用空格把元素隔开，否则会被看作str</p>
+<h5 id="1）数字运算符"><a href="#1）数字运算符" class="headerlink" title="1）数字运算符"></a>1）数字运算符</h5><p><code>+</code></p>
+<pre><code class="hljs scss"><span class="hljs-comment">// num+num</span>
+<span class="hljs-comment">// a.带不带单位都把数字拼起来</span>
+<span class="hljs-variable">$add1</span>: <span class="hljs-number">1</span> + <span class="hljs-number">2</span>;	<span class="hljs-comment">// 3</span>
+<span class="hljs-variable">$add2</span>: <span class="hljs-number">1</span> + <span class="hljs-number">2px</span>; <span class="hljs-comment">// 3px</span>
+<span class="hljs-variable">$add3</span>: <span class="hljs-number">1px</span> + <span class="hljs-number">2</span>; <span class="hljs-comment">// 3px</span>
+<span class="hljs-variable">$add4</span>: <span class="hljs-number">1px</span> + <span class="hljs-number">2px</span>;<span class="hljs-comment">//3px</span>
+
+<span class="hljs-comment">// str+str</span>
+<span class="hljs-comment">// b.第一个str带“”，结果带“”</span>
+<span class="hljs-variable">$add5</span>: <span class="hljs-string">&quot;a&quot;</span> + <span class="hljs-string">&quot;b&quot;</span>; <span class="hljs-comment">// &quot;ab&quot;</span>
+<span class="hljs-variable">$add6</span>: <span class="hljs-string">&quot;a&quot;</span> + b;	  <span class="hljs-comment">// &quot;ab&quot;</span>
+<span class="hljs-variable">$add7</span>: a + <span class="hljs-string">&quot;b&quot;</span>;	  <span class="hljs-comment">// ab</span>
+<span class="hljs-variable">$add8</span>: a + b;	  <span class="hljs-comment">// ab</span>
+
+<span class="hljs-comment">// num和str</span>
+<span class="hljs-comment">// c.第一个带“”，结果带“”</span>
+<span class="hljs-comment">// 最后一个带“”，且第一个是数字，结果带“”。否则不带</span>
+<span class="hljs-variable">$add9</span>: <span class="hljs-number">1</span> + a;	<span class="hljs-comment">// 1a</span>
+<span class="hljs-variable">$adda</span>: a + <span class="hljs-number">1</span>;	<span class="hljs-comment">// a1</span>
+<span class="hljs-variable">$addb</span>: <span class="hljs-string">&quot;1&quot;</span> + a; <span class="hljs-comment">// &quot;1a&quot;</span>
+<span class="hljs-variable">$addc</span>: <span class="hljs-number">1</span> + <span class="hljs-string">&quot;a&quot;</span>; <span class="hljs-comment">// &quot;1a&quot;</span>
+<span class="hljs-variable">$addd</span>: <span class="hljs-string">&quot;a&quot;</span> + <span class="hljs-number">1</span>; <span class="hljs-comment">// &quot;a1&quot;</span>
+<span class="hljs-variable">$adde</span>: a + <span class="hljs-string">&quot;1&quot;</span>; <span class="hljs-comment">// a1</span>
+<span class="hljs-variable">$addf</span>: <span class="hljs-number">1</span> + <span class="hljs-string">&quot;1&quot;</span>; <span class="hljs-comment">// &quot;11&quot;</span></code></pre>
+
+<p><code>-</code></p>
+<p>原样拼在一起</p>
+<pre><code class="hljs scss"><span class="hljs-comment">// num+num</span>
+<span class="hljs-comment">// a.带不带单位都把数字拼起来</span>
+<span class="hljs-variable">$add1</span>: <span class="hljs-number">1</span> - <span class="hljs-number">2</span>;	<span class="hljs-comment">// -1</span>
+<span class="hljs-variable">$add2</span>: <span class="hljs-number">1</span> - <span class="hljs-number">2px</span>; <span class="hljs-comment">// -1px</span>
+<span class="hljs-variable">$add3</span>: <span class="hljs-number">1px</span> - <span class="hljs-number">2</span>; <span class="hljs-comment">// -1px</span>
+<span class="hljs-variable">$add4</span>: <span class="hljs-number">1px</span> - <span class="hljs-number">2px</span>;<span class="hljs-comment">//-1px</span>
+
+<span class="hljs-variable">$sub1</span>: a - <span class="hljs-number">1</span>;  <span class="hljs-comment">// a-1</span>
+<span class="hljs-variable">$sub2</span>: <span class="hljs-number">1</span> - a;  <span class="hljs-comment">// 1-a</span>
+<span class="hljs-variable">$sub3</span>: <span class="hljs-string">&quot;a&quot;</span> - <span class="hljs-number">1</span>;<span class="hljs-comment">// &quot;a&quot;-1</span>
+<span class="hljs-variable">$sub4</span>: a - <span class="hljs-string">&quot;1&quot;</span>;<span class="hljs-comment">// a-&quot;1&quot;</span></code></pre>
+
+<ul>
+<li><p><code>*</code></p>
+<p>a.num*num，不能同时为带单位num</p>
+</li>
+<li><p><code>/</code></p>
+<p>a.不会四舍五入，精确到小数点后5位</p>
+</li>
+<li><p><code>%</code></p>
+</li>
+</ul>
+<h5 id="2）关系运算符"><a href="#2）关系运算符" class="headerlink" title="2）关系运算符"></a>2）关系运算符</h5><p>符号左右是数字|有单位数字</p>
+<p>返回：true|false</p>
+<p><code>&gt;</code>   <code>&lt;</code>   <code>&lt;=</code>   <code>&gt;=</code>  </p>
+<h5 id="3）相等运算符"><a href="#3）相等运算符" class="headerlink" title="3）相等运算符"></a>3）相等运算符</h5><p>用于所有数据类型</p>
+<p>返回：true|false</p>
+<p><code>==</code>   <code>!=</code></p>
+<p>  num之间比较，只比较数字，str比较不看引号要一一对应去比较；</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$a</span>: <span class="hljs-number">1</span> == <span class="hljs-number">1px</span>; <span class="hljs-comment">// true</span>
+<span class="hljs-variable">$b</span>: <span class="hljs-string">&quot;a&quot;</span> == a; <span class="hljs-comment">// true</span></code></pre>
+
+<h5 id="4）布尔运算符"><a href="#4）布尔运算符" class="headerlink" title="4）布尔运算符"></a>4）布尔运算符</h5><p><code>and</code>   <code>or</code>   <code>not</code></p>
+<pre><code class="hljs scss"><span class="hljs-variable">$a</span>: <span class="hljs-number">1</span>&gt;<span class="hljs-number">0</span> and <span class="hljs-number">0</span>&gt;=<span class="hljs-number">5</span>; <span class="hljs-comment">// fasle</span></code></pre>
+
+<h5 id="5）颜色运算符"><a href="#5）颜色运算符" class="headerlink" title="5）颜色运算符"></a>5）颜色运算符</h5><p>颜色运算是分段，分别计算r、g、b三种颜色，两个两个隔开；</p>
+<ul>
+<li><p><code>颜色值与颜色值</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#010203</span> + <span class="hljs-number">#040506</span>;
+&#125;
+
+<span class="hljs-comment">// 计算 01 + 04 = 05 02 + 05 = 07 03 + 06 = 09，然后编译为</span>
+<span class="hljs-comment">// p &#123;</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#050709</span>; &#125;</code></pre>
+</li>
+<li><p><code>颜色值与数字</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#010203</span> * <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-comment">// 计算 01 * 2 = 02 02 * 2 = 04 03 * 2 = 06，然后编译为</span>
+<span class="hljs-comment">// p &#123;</span>
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#020406</span>; &#125;</code></pre>
+</li>
+<li><p><code>RGB和HSL</code></p>
+<pre><code class="hljs scss"><span class="hljs-comment">// 如果颜色值包含 alpha channel（rgba 或 hsla 两种颜色值），必须拥有相等的 alpha 值才能进行运算，因为算术运算不会作用于 alpha 值。</span>
+
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: rgba(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.75</span>) + rgba(<span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.75</span>);
+&#125;
+
+<span class="hljs-comment">// p &#123;</span>
+  <span class="hljs-attribute">color</span>: rgba(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.75</span>); &#125;</code></pre>
+
+</li>
+</ul>
+<h5 id="6）运算优先级"><a href="#6）运算优先级" class="headerlink" title="6）运算优先级"></a>6）运算优先级</h5><p>由高到低</p>
+<p><code>()</code></p>
+<p><code>*</code> <code>/</code> <code>%</code></p>
+<p><code>+</code> <code>-</code></p>
+<p><code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code></p>
+<h4 id="6-嵌套语句"><a href="#6-嵌套语句" class="headerlink" title="6.嵌套语句"></a>6.嵌套语句</h4><p>scss文件一层套一层的定义标签</p>
+<h4 id="7-杂货语法"><a href="#7-杂货语法" class="headerlink" title="7.杂货语法"></a>7.杂货语法</h4><h5 id="1）插值"><a href="#1）插值" class="headerlink" title="1）插值"></a>1）插值</h5><p>定义变量：$变量名：变量值；</p>
+<p><code>#&#123;变量名&#125;</code>用在选择器、属性名、属性值，直接塞进去赋值</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$name</span>: foo;
+<span class="hljs-variable">$attr</span>: border;
+<span class="hljs-selector-tag">p</span>.#&#123;<span class="hljs-variable">$name</span>&#125; &#123;
+  #&#123;<span class="hljs-variable">$attr</span>&#125;-<span class="hljs-attribute">color</span>: <span class="hljs-variable">$name</span>;
+&#125;
+
+<span class="hljs-comment">// 编译后：</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.foo</span> &#123;
+  <span class="hljs-attribute">border-color</span>: foo;
+&#125;</code></pre>
+
+<h5 id="2）-amp"><a href="#2）-amp" class="headerlink" title="2）&amp;"></a>2）&amp;</h5><p>父选择器，&amp;父的名字</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">a</span> &#123;
+    <span class="hljs-attribute">color</span>: yellow;
+    <span class="hljs-comment">// &amp;:hover &lt;=&gt; a:hover</span>
+    &amp;<span class="hljs-selector-pseudo">:hover</span>&#123;
+        <span class="hljs-attribute">color</span>: green;
+    &#125;
+    &amp;<span class="hljs-selector-pseudo">:active</span>&#123;
+        <span class="hljs-attribute">color</span>: blank;
+    &#125;
+&#125;</code></pre>
+
+<h5 id="3）-default"><a href="#3）-default" class="headerlink" title="3）!default"></a>3）!default</h5><p>$变量:变量值 !default;</p>
+<p>a.之前没定义变量，<code>$变量:变量值 !default;</code>调用变量时，值为当前定义的变量值；</p>
+<p>b.之前定义了一个变量，再调用变量时值为之前定义的变量；</p>
+<p>c.定义了一个变量为null，编译后值不存在；</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$isNull</span>: null;
+<span class="hljs-variable">$content</span>: <span class="hljs-string">&quot;First content&quot;</span>;
+<span class="hljs-variable">$content</span>: <span class="hljs-string">&quot;Second content?&quot;</span> !default;
+<span class="hljs-variable">$new_content</span>: <span class="hljs-string">&quot;First time reference&quot;</span> !default;
+
+<span class="hljs-selector-id">#main</span> &#123;
+  isNull: <span class="hljs-variable">$isNull</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-variable">$content</span>;
+  new-<span class="hljs-attribute">content</span>: <span class="hljs-variable">$new_content</span>;
+&#125;
+
+<span class="hljs-comment">// 编译为：</span>
+<span class="hljs-selector-id">#main</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;First content&quot;</span>;
+  new-<span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;First time reference&quot;</span>; 
+&#125;</code></pre>
+
+<h5 id="4）-global"><a href="#4）-global" class="headerlink" title="4）!global"></a>4）!global</h5><p>局部变量提升为全局变量</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$w</span>:<span class="hljs-number">10px</span>;
+
+<span class="hljs-selector-tag">body</span>&#123;
+ <span class="hljs-comment">// 局部变量 !global;提升成全局变量</span>
+  <span class="hljs-variable">$w1</span>: <span class="hljs-number">5px</span> !global;
+  <span class="hljs-attribute">width</span>: <span class="hljs-variable">$w</span>;
+&#125;
+<span class="hljs-selector-tag">p</span>&#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-variable">$w1</span>;
+&#125;
+<span class="hljs-comment">// 编译为：</span>
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">10px</span>;
+&#125;
+
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">5px</span>;
+&#125;</code></pre>
+
+<h5 id="5）-optional"><a href="#5）-optional" class="headerlink" title="5）!optional"></a>5）!optional</h5><p>没有定义选择器，@extend .select 会报错，使用!optional 可以不生成新选择器，不报错</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">a</span>&#123;
+  <span class="hljs-keyword">@extend</span> .select !optional;
+&#125;
+
+<span class="hljs-comment">// 编译后不报错，不执行这一行</span></code></pre>
+
+<h4 id="8-Rules"><a href="#8-Rules" class="headerlink" title="8.@-Rules"></a>8.@-Rules</h4><h5 id="1）-import"><a href="#1）-import" class="headerlink" title="1）@import"></a>1）@import</h5><p>可以嵌套@import，不能在混合指令（minix）中嵌套；</p>
+<p>引入scss文件，不希望被编译成css，<code>@import  _file.scss</code>引入带下划线的scss文件；</p>
+<pre><code class="hljs scss"><span class="hljs-comment">// 导入scss，不加后缀会自动找符合名字的scss或sass文件</span>
+<span class="hljs-keyword">@import</span> file.scss;
+<span class="hljs-keyword">@import</span> file;
+<span class="hljs-comment">// css 语法，不导入scss文件</span>
+<span class="hljs-keyword">@import</span> file.css;
+<span class="hljs-keyword">@import</span> url(<span class="hljs-string">&#x27;xxx&#x27;</span>);
+<span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;http://xxx&#x27;</span>;
+<span class="hljs-keyword">@import</span> file screen;
+<span class="hljs-comment">// scss导入多个文件</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;file1&#x27;</span>,<span class="hljs-string">&#x27;file2&#x27;</span>;
+<span class="hljs-comment">// 导入插值语句</span>
+<span class="hljs-variable">$family</span>: unquote(<span class="hljs-string">&quot;Droid+Sans&quot;</span>);
+<span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;http://fonts.googleapis.com/css?family=#&#123;$family&#125;&quot;</span>);
+<span class="hljs-comment">// 编译为：</span>
+<span class="hljs-keyword">@import</span> url(<span class="hljs-string">&quot;http://fonts.googleapis.com/css?family=Droid+Sans&quot;</span>);</code></pre>
+
+<h5 id="2）-media"><a href="#2）-media" class="headerlink" title="2）@media"></a>2）@media</h5><p>css规则中嵌套</p>
+<pre><code class="hljs scss"><span class="hljs-selector-class">.sidebar</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (orientation: landscape) &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  &#125;
+&#125;
+<span class="hljs-selector-class">.sidebar</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+&#125;
+<span class="hljs-comment">// 编译为</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (orientation: landscape) &#123;
+  <span class="hljs-selector-class">.sidebar</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+  &#125;
+&#125;
+<span class="hljs-comment">/*# sourceMappingURL=table-1.css.map */</span></code></pre>
+
+<p>媒体查询允许互相嵌套，编译添加and</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@media</span> screen &#123;
+  <span class="hljs-selector-class">.sidebar</span> &#123;
+    <span class="hljs-keyword">@media</span> (orientation: landscape) &#123;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+    &#125;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译为：</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (orientation: landscape) &#123;
+  <span class="hljs-selector-class">.sidebar</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>; &#125; 
+&#125;</code></pre>
+
+<p>插值</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$media</span>: screen;
+<span class="hljs-variable">$feature</span>: -webkit-min-device-pixel-ratio;
+<span class="hljs-variable">$value</span>: <span class="hljs-number">1.5</span>;
+
+<span class="hljs-keyword">@media</span> #&#123;<span class="hljs-variable">$media</span>&#125; and (<span class="hljs-variable">$feature</span>: <span class="hljs-variable">$value</span>) &#123;
+  .sidebar &#123;
+    width: <span class="hljs-number">500px</span>;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译为：</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (-webkit-min-device-pixel-ratio: <span class="hljs-number">1.5</span>) &#123;
+  <span class="hljs-selector-class">.sidebar</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>; &#125; 
+&#125;</code></pre>
+
+
+
+<h5 id="3）-extend"><a href="#3）-extend" class="headerlink" title="3）@extend"></a>3）@extend</h5><p>extend会合并相同选择器</p>
+<pre><code class="hljs scss"><span class="hljs-comment">// a.基本延伸</span>
+<span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-keyword">@extend</span> .a;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;
+<span class="hljs-comment">// 编译为</span>
+<span class="hljs-selector-class">.a</span>,<span class="hljs-selector-class">.b</span>&#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span>&#123;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;</code></pre>
+
+<pre><code class="hljs scss"><span class="hljs-comment">// b.多重延伸</span>
+<span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-keyword">@extend</span> .a;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;
+<span class="hljs-selector-class">.c</span>&#123;
+   <span class="hljs-keyword">@extend</span> .a;
+&#125;
+<span class="hljs-comment">// 编译为</span>
+<span class="hljs-selector-class">.a</span>,<span class="hljs-selector-class">.b</span>,<span class="hljs-selector-class">.c</span>&#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span>&#123;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;</code></pre>
+
+<pre><code class="hljs scss"><span class="hljs-comment">// c.继续延伸</span>
+<span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-keyword">@extend</span> .a;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;
+<span class="hljs-selector-class">.c</span>&#123;
+   <span class="hljs-keyword">@extend</span> .b;
+&#125;
+<span class="hljs-comment">// 编译为</span>
+<span class="hljs-selector-class">.a</span>,<span class="hljs-selector-class">.b</span>,<span class="hljs-selector-class">.c</span>&#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span>,<span class="hljs-selector-class">.c</span>&#123;
+  <span class="hljs-attribute">border-width</span>: <span class="hljs-number">3px</span>;
+&#125;</code></pre>
+
+<pre><code class="hljs scss"><span class="hljs-comment">// d.%</span>
+<span class="hljs-comment">// path继承img，编译后不会将%img也编译进去</span>
+<span class="hljs-comment">// example1:</span>
+%<span class="hljs-selector-tag">b</span> &#123;
+    <span class="hljs-attribute">color</span>: red;
+&#125;
+<span class="hljs-selector-class">.a</span>&#123;
+    <span class="hljs-keyword">@extend</span> %b;
+&#125;
+<span class="hljs-comment">// 编译后：</span>
+<span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;
+<span class="hljs-comment">// example2:</span>
+<span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.a</span>%c &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-keyword">@extend</span> %c;
+&#125;
+<span class="hljs-comment">// 编译后：</span>
+<span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.a</span><span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-comment">// example3:</span>
+<span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+<span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-keyword">@extend</span> .a;
+&#125;
+<span class="hljs-comment">// 编译后：</span>
+<span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.a</span>,<span class="hljs-selector-id">#app</span> <span class="hljs-selector-class">.b</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f00</span>;
+&#125;
+
+<span class="hljs-comment">// 注：必须是&quot;.&quot;和&quot;#&quot;选择器</span></code></pre>
+
+
+
+<h5 id="4）-at-root"><a href="#4）-at-root" class="headerlink" title="4）@at-root"></a>4）@at-root</h5><p>让选择器跳出嵌套</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">div</span>&#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+  <span class="hljs-keyword">@at-root</span>&#123;
+    <span class="hljs-selector-tag">p</span>&#123;
+      <span class="hljs-attribute">color</span>: red;
+    &#125;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">div</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+&#125;
+
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;</code></pre>
+
+<h5 id="5）-debug"><a href="#5）-debug" class="headerlink" title="5）@debug"></a>5）@debug</h5><p>调试</p>
+<pre><code class="hljs scss"><span class="hljs-variable">$size</span>: <span class="hljs-number">9px</span>;
+
+<span class="hljs-selector-class">.file</span>&#123;
+  <span class="hljs-keyword">@debug</span> <span class="hljs-variable">$size</span>;
+&#125;</code></pre>
+
+<h5 id="6）-error"><a href="#6）-error" class="headerlink" title="6）@error"></a>6）@error</h5><p>错误</p>
+<h5 id="7）-warn"><a href="#7）-warn" class="headerlink" title="7）@warn"></a>7）@warn</h5><p>警告</p>
+<h4 id="9-控制指令"><a href="#9-控制指令" class="headerlink" title="9.控制指令"></a>9.控制指令</h4><h5 id="1）if"><a href="#1）if" class="headerlink" title="1）if()"></a>1）if()</h5><p><code>if(表达式,value1,value2)</code></p>
+<p>表达式用<code>!=,==,&lt;=,&lt;,&gt;,&gt;=</code></p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">p</span>&#123;
+    <span class="hljs-attribute">color</span>: if(<span class="hljs-number">1</span>+<span class="hljs-number">1</span>==<span class="hljs-number">2</span>,red,blue);
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;</code></pre>
+
+<h5 id="2）-if"><a href="#2）-if" class="headerlink" title="2）@if"></a>2）@if</h5><p>@if 表达式1-@else if 表达式2-@else 表达式3</p>
+<pre><code class="hljs scss"><span class="hljs-selector-tag">p</span>&#123;
+    <span class="hljs-keyword">@if</span> <span class="hljs-number">1</span>+<span class="hljs-number">1</span>==<span class="hljs-number">2</span> &#123;
+        <span class="hljs-attribute">color</span>:red;
+    &#125;<span class="hljs-keyword">@else</span> if <span class="hljs-number">1</span>+<span class="hljs-number">1</span>&gt;<span class="hljs-number">2</span>&#123;
+        <span class="hljs-attribute">color</span>:blue;
+    &#125;<span class="hljs-keyword">@else</span>&#123;
+        <span class="hljs-attribute">color</span>:green;
+    &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;</code></pre>
+
+<h5 id="3）-for"><a href="#3）-for" class="headerlink" title="3）@for"></a>3）@for</h5><p><code>for $var from &lt;start&gt; through &lt;end&gt;&#123;&#125;</code></p>
+<p><code>for $var from &lt;start&gt; to &lt;end&gt;&#123;&#125;</code></p>
+<p>through和end区别是否包括end</p>
+<p>through：[start,end]</p>
+<p>end：[start,end)</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">3</span>&#123;
+    <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$i</span>&#125;&#123;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">1px</span> * <span class="hljs-variable">$i</span>
+    &#125;
+&#125;
+// 编译后
+.item-<span class="hljs-number">1</span> &#123;
+  width: <span class="hljs-number">1px</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-2</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2px</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-3</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">3px</span>;
+&#125;</code></pre>
+
+<h5 id="4）-while"><a href="#4）-while" class="headerlink" title="4）@while"></a>4）@while</h5><p><code>$var:变量</code></p>
+<p><code>@while 表达式&#123;</code></p>
+<pre><code>   `...`</code></pre>
+<p><code>表达式不执行条件</code></p>
+<p><code>&#125;</code></p>
+<pre><code class="hljs scss"><span class="hljs-variable">$var</span>:<span class="hljs-number">6</span>;
+<span class="hljs-keyword">@while</span> <span class="hljs-variable">$var</span>&gt;<span class="hljs-number">0</span> &#123;
+    <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$var</span>&#125;&#123;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">1px</span> * <span class="hljs-variable">$var</span>;
+    &#125;
+    <span class="hljs-variable">$var</span>:<span class="hljs-variable">$var</span> - <span class="hljs-number">2</span>;
+&#125; 
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.item-6</span>&#123;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">6px</span>;
+&#125;
+<span class="hljs-selector-class">.item-4</span>&#123;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">4px</span>;
+&#125;
+<span class="hljs-selector-class">.item-2</span>&#123;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">2px</span>;
+&#125;</code></pre>
+
+<h5 id="5）-each"><a href="#5）-each" class="headerlink" title="5）@each"></a>5）@each</h5><p><code>@each $var in $vars</code></p>
+<p>$var: 任何类型</p>
+<p>$vars:list|map</p>
+<p>list</p>
+<p>一维数组</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@each</span> <span class="hljs-variable">$i</span> in a,b,c&#123;
+    <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$i</span>&#125;&#123;
+        <span class="hljs-attribute">background</span>:url(<span class="hljs-string">&#x27;#&#123;$i&#125;&#x27;</span>);
+    &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.item-a</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;a&quot;</span>);
+&#125;
+
+<span class="hljs-selector-class">.item-b</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;b&quot;</span>);
+&#125;
+
+<span class="hljs-selector-class">.item-c</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;c&quot;</span>);
+&#125;</code></pre>
+
+<p>二维数组</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@each</span> <span class="hljs-variable">$a</span>,<span class="hljs-variable">$b</span> in (icon1,<span class="hljs-number">1</span>),(icon2,<span class="hljs-number">2</span>)&#123;
+  <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$b</span>&#125;&#123;
+      <span class="hljs-attribute">background</span>:url(<span class="hljs-string">&#x27;#&#123;$a&#125;&#x27;</span>);
+      <span class="hljs-attribute">width</span>:#&#123;<span class="hljs-variable">$b</span>&#125;;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.item-1</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;icon1&quot;</span>);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">1</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-2</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;icon2&quot;</span>);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2</span>;
+&#125;</code></pre>
+
+<p>map</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@each</span> <span class="hljs-variable">$k</span>,<span class="hljs-variable">$v</span> in (key1:<span class="hljs-number">2</span>,key2:<span class="hljs-number">2</span>)&#123;
+    <span class="hljs-selector-class">.item-</span>#&#123;<span class="hljs-variable">$v</span>&#125;&#123;
+        <span class="hljs-attribute">background</span>:url(<span class="hljs-string">&#x27;#&#123;$k&#125;&#x27;</span>);
+     	<span class="hljs-attribute">width</span>:#&#123;<span class="hljs-variable">$v</span>&#125;;
+    &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.item-2</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;key1&quot;</span>);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-selector-class">.item-2</span> &#123;
+  <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&quot;key2&quot;</span>);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">2</span>;
+&#125;</code></pre>
+
+<h4 id="10-混合指令（mixin）"><a href="#10-混合指令（mixin）" class="headerlink" title="10.混合指令（mixin）"></a>10.混合指令（mixin）</h4><h5 id="1）定义：-mixin-混合名称"><a href="#1）定义：-mixin-混合名称" class="headerlink" title="1）定义：@mixin 混合名称"></a>1）定义：<code>@mixin 混合名称</code></h5><h5 id="2）引用：-include-混合名称"><a href="#2）引用：-include-混合名称" class="headerlink" title="2）引用：@include 混合名称"></a>2）引用：<code>@include 混合名称</code></h5><pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> large-text&#123;
+  <span class="hljs-attribute">font</span>: &#123;
+    family: Arial;
+    size: <span class="hljs-number">20px</span>;
+    weight: bold;
+  &#125;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+&#125;
+<span class="hljs-selector-tag">p</span>&#123;
+  <span class="hljs-keyword">@include</span> large-text;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">p</span> &#123;
+  <span class="hljs-attribute">font-family</span>: Arial;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;
+&#125;</code></pre>
+
+<h5 id="3）参数"><a href="#3）参数" class="headerlink" title="3）参数"></a>3）参数</h5><p><code>@mixin(参数)</code></p>
+<p>位置传参</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> mp(<span class="hljs-variable">$width</span>)&#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$width</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-keyword">@include</span> mp(<span class="hljs-number">10px</span>);
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+&#125;</code></pre>
+
+<p>默认参数</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> mp(<span class="hljs-variable">$width</span>:<span class="hljs-number">20px</span>)&#123;
+  <span class="hljs-attribute">width</span>:<span class="hljs-variable">$width</span>;
+&#125;
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-comment">// @include mp(30px);</span>
+  <span class="hljs-keyword">@include</span> mp(<span class="hljs-variable">$width</span>:<span class="hljs-number">30px</span>);
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+&#125;</code></pre>
+
+<p>不确定个数的参数</p>
+<p>不确定调用时传入了多少参数，在定义的时候可以用<code>...</code>表示多个参数。所有参数都放在引用的位置。</p>
+<p><code>@mixin 混合名称($params...)</code></p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> mp(<span class="hljs-variable">$color</span>...)&#123;
+  <span class="hljs-attribute">color</span>:<span class="hljs-variable">$color</span>;
+  <span class="hljs-attribute">border-color</span>:<span class="hljs-variable">$color</span>;
+&#125;
+
+<span class="hljs-selector-tag">body</span>&#123;
+  <span class="hljs-keyword">@include</span> mp(red,blue,green);
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">color</span>: red, blue, green;
+  <span class="hljs-attribute">border-color</span>: red, blue, green;
+&#125;</code></pre>
+
+<h5 id="4）混合样式中导入内容"><a href="#4）混合样式中导入内容" class="headerlink" title="4）混合样式中导入内容"></a>4）混合样式中导入内容</h5><p>定义和引用的混合指令名相同，把@include的混合指令名在@content的位置展开。</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> mp&#123;
+  <span class="hljs-selector-tag">body</span>&#123;
+    <span class="hljs-keyword">@content</span>;
+  &#125;
+&#125;
+
+<span class="hljs-keyword">@include</span> mp&#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-selector-class">.a</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-tag">body</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+&#125;
+
+<span class="hljs-selector-tag">body</span> <span class="hljs-selector-class">.a</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+&#125;</code></pre>
+
+<h5 id="11-函数指令"><a href="#11-函数指令" class="headerlink" title="11.函数指令"></a>11.函数指令</h5><h6 id="a-字符串函数"><a href="#a-字符串函数" class="headerlink" title="a. 字符串函数"></a>a. 字符串函数</h6><blockquote>
+<p>索引第一个为1，最后一个为-1；切片两边均为闭区间</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">quote($string)</td>
+<td align="center">添加引号</td>
+</tr>
+<tr>
+<td align="left">unquote($string)</td>
+<td align="center">除去引号</td>
+</tr>
+<tr>
+<td align="left">to-lower-case($string)</td>
+<td align="center">变为小写</td>
+</tr>
+<tr>
+<td align="left">to-upper-case($string)</td>
+<td align="center">变为大写</td>
+</tr>
+<tr>
+<td align="left">str-length($string)</td>
+<td align="center">返回$string的长度(汉字算一个)</td>
+</tr>
+<tr>
+<td align="left">str-index($string，$substring)</td>
+<td align="center">返回$substring在$string的位置</td>
+</tr>
+<tr>
+<td align="left">str-insert($string, $insert, $index)</td>
+<td align="center">在$string的$index处插入$insert</td>
+</tr>
+<tr>
+<td align="left">str-slice($string, $start-at, $end-at）</td>
+<td align="center">截取$string的$start-at和$end-at之间的字符串</td>
+</tr>
+</tbody></table>
+<h6 id="b-数字函数"><a href="#b-数字函数" class="headerlink" title="b. 数字函数"></a>b. 数字函数</h6><table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>percentage($number)</td>
+<td align="center">转换为百分比形式</td>
+</tr>
+<tr>
+<td>round($number)</td>
+<td align="center">四舍五入为整数</td>
+</tr>
+<tr>
+<td>ceil($number)</td>
+<td align="center">数值向上取整</td>
+</tr>
+<tr>
+<td>floor($number)</td>
+<td align="center">数值向下取整</td>
+</tr>
+<tr>
+<td>abs($number)</td>
+<td align="center">获取绝对值</td>
+</tr>
+<tr>
+<td>min($number…)</td>
+<td align="center">获取最小值</td>
+</tr>
+<tr>
+<td>max($number…)</td>
+<td align="center">获取最大值</td>
+</tr>
+<tr>
+<td>random($number?:number)</td>
+<td align="center">不传入值：获得0-1的随机数；传入正整数n：获得0-n的随机整数（左开右闭）</td>
+</tr>
+</tbody></table>
+<h6 id="c-数组函数"><a href="#c-数组函数" class="headerlink" title="c. 数组函数"></a>c. 数组函数</h6><table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>length($list)</td>
+<td align="center">获取数组长度</td>
+</tr>
+<tr>
+<td>nth($list, n)</td>
+<td align="center">获取指定下标的元素</td>
+</tr>
+<tr>
+<td>set-nth($list, $n, $value)</td>
+<td align="center">向$list的$n处插入$value</td>
+</tr>
+<tr>
+<td>join($list1, $list2, $separator)</td>
+<td align="center">拼接$list1和list2；$separator为新list的分隔符，默认为auto，可选择comma、space</td>
+</tr>
+<tr>
+<td>append($list, $val, $separator)</td>
+<td align="center">向$list的末尾添加$val；$separator为新list的分隔符，默认为auto，可选择comma、space</td>
+</tr>
+<tr>
+<td>index($list, $value)</td>
+<td align="center">返回$value值在$list中的索引值</td>
+</tr>
+<tr>
+<td>zip($lists…)</td>
+<td align="center">将几个列表结合成一个多维的列表；要求每个的列表个数值必须是相同的</td>
+</tr>
+</tbody></table>
+<h6 id="d-映射函数"><a href="#d-映射函数" class="headerlink" title="d. 映射函数"></a>d. 映射函数</h6><table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>map-get($map, $key)</td>
+<td align="center">获取$map中$key对应的$value</td>
+</tr>
+<tr>
+<td>map-merge($map1, $map2)</td>
+<td align="center">合并$map1和$map2，返回一个新$map</td>
+</tr>
+<tr>
+<td>map-remove($map, $key)</td>
+<td align="center">从$map中删除$key，返回一个新$map</td>
+</tr>
+<tr>
+<td>map-keys($map)</td>
+<td align="center">返回$map所有的$key</td>
+</tr>
+<tr>
+<td>map-values($map)</td>
+<td align="center">返回$map所有的$value</td>
+</tr>
+<tr>
+<td>map-has-key($map, $key)</td>
+<td align="center">判断$map中是否存在$key，返回对应的布尔值</td>
+</tr>
+<tr>
+<td>keywords($args)</td>
+<td align="center">返回一个函数的参数，并可以动态修改其值</td>
+</tr>
+</tbody></table>
+<h6 id="e-颜色函数"><a href="#e-颜色函数" class="headerlink" title="e. 颜色函数"></a>e. 颜色函数</h6><ul>
+<li><p><strong>RGB函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rgb($red, $green, $blue)</td>
+<td align="center">返回一个16进制颜色值</td>
+</tr>
+<tr>
+<td>rgba($red,$green,$blue,$alpha)</td>
+<td align="center">返回一个rgba；$red,$green和$blue可被当作一个整体以颜色单词、hsl、rgb或16进制形式传入</td>
+</tr>
+<tr>
+<td>red($color)</td>
+<td align="center">从$color中获取其中红色值</td>
+</tr>
+<tr>
+<td>green($color)</td>
+<td align="center">从$color中获取其中绿色值</td>
+</tr>
+<tr>
+<td>blue($color)</td>
+<td align="center">从$color中获取其中蓝色值</td>
+</tr>
+<tr>
+<td>mix($color1,$color2,$weight?)</td>
+<td align="center">按照$weight比例，将$color1和$color2混合为一个新颜色</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>HSL函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th>函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hsl($hue,$saturation,$lightness)</td>
+<td>通过色相（hue）、饱和度(saturation)和亮度（lightness）的值创建一个颜色</td>
+</tr>
+<tr>
+<td>hsla($hue,$saturation,$lightness,$alpha)</td>
+<td>通过色相（hue）、饱和度(saturation)、亮度（lightness）和透明（alpha）的值创建一个颜色</td>
+</tr>
+<tr>
+<td>saturation($color)</td>
+<td>从一个颜色中获取饱和度（saturation）值</td>
+</tr>
+<tr>
+<td>lightness($color)</td>
+<td>从一个颜色中获取亮度（lightness）值</td>
+</tr>
+<tr>
+<td>adjust-hue($color,$degrees)</td>
+<td>通过改变一个颜色的色相值，创建一个新的颜色</td>
+</tr>
+<tr>
+<td>lighten($color,$amount)</td>
+<td>通过改变颜色的亮度值，让颜色变亮，创建一个新的颜色</td>
+</tr>
+<tr>
+<td>darken($color,$amount)</td>
+<td>通过改变颜色的亮度值，让颜色变暗，创建一个新的颜色</td>
+</tr>
+<tr>
+<td>hue($color)</td>
+<td>从一个颜色中获取亮度色相（hue）值</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>Opacity函数</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alpha($color)/opacity($color)</td>
+<td>获取颜色透明度值</td>
+</tr>
+<tr>
+<td>rgba($color,$alpha)</td>
+<td>改变颜色的透明度</td>
+</tr>
+<tr>
+<td>opacify($color, $amount) / fade-in($color, $amount)</td>
+<td>使颜色更不透明</td>
+</tr>
+<tr>
+<td>transparentize($color, $amount) / fade-out($color, $amount)</td>
+<td>使颜色更加透明</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h6 id="f-Introspection函数"><a href="#f-Introspection函数" class="headerlink" title="f. Introspection函数"></a>f. Introspection函数</h6><table>
+<thead>
+<tr>
+<th>函数名和参数类型</th>
+<th align="center">函数作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type-of($value)</td>
+<td align="center">返回$value的类型</td>
+</tr>
+<tr>
+<td>unit($number)</td>
+<td align="center">返回$number的单位</td>
+</tr>
+<tr>
+<td>unitless($number)</td>
+<td align="center">判断$number是否带单位，返回对应的布尔值</td>
+</tr>
+<tr>
+<td>comparable($number1, $number2)</td>
+<td align="center">判断$number1和$number2是否可以做加、减和合并，返回对应的布尔值</td>
+</tr>
+</tbody></table>
+<h5 id="12-extend-mixin-function"><a href="#12-extend-mixin-function" class="headerlink" title="12.@extend|@mixin|@function"></a>12.@extend|@mixin|@function</h5><h6 id="mixin-extend"><a href="#mixin-extend" class="headerlink" title="@mixin|@extend"></a>@mixin|@extend</h6><p>@mixin和@extend如何选择：<a target="_blank" rel="noopener" href="https://www.sass.hk/skill/sass141.html">https://www.sass.hk/skill/sass141.html</a></p>
+<p>@mixin</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@mixin</span> foo &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">3</span> &#123;
+  .#&#123;unique-id()&#125;-#&#123;<span class="hljs-variable">$i</span>&#125; &#123;
+    <span class="hljs-keyword">@include</span> foo;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf#&#123;&amp;&#125;jaslbw&quot;</span>;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.u498449cd-1</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.u498449cd-1jaslbw&quot;</span>;
+&#125;
+
+<span class="hljs-selector-class">.u3a139284-2</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.u3a139284-2jaslbw&quot;</span>;
+&#125;
+
+<span class="hljs-selector-class">.ube41013e-3</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.ube41013e-3jaslbw&quot;</span>;
+&#125;</code></pre>
+
+<p>@extend</p>
+<pre><code class="hljs scss">%foo &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">3</span> &#123;
+  .#&#123;unique-id()&#125;-#&#123;<span class="hljs-variable">$i</span>&#125; &#123;
+    <span class="hljs-keyword">@extend</span> %foo;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf#&#123;&amp;&#125;jaslbw&quot;</span>;
+  &#125;
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.ue6069666-1</span>, <span class="hljs-selector-class">.ua5b4178c-2</span>, <span class="hljs-selector-class">.u24e8893c-3</span> &#123;
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-weight</span>: bold;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-selector-class">.ue6069666-1</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.ue6069666-1jaslbw&quot;</span>;
+&#125;
+
+<span class="hljs-selector-class">.ua5b4178c-2</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.ua5b4178c-2jaslbw&quot;</span>;
+&#125;
+
+<span class="hljs-selector-class">.u24e8893c-3</span> &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;ibf.u24e8893c-3jaslbw&quot;</span>;
+&#125;</code></pre>
+
+<p>@mixin：</p>
+<p>1）可以传参；</p>
+<p>2）编译完成的代码重复片段高，gzip压缩后可以很好优化重复代码，编译后不会肿胀，压缩后文件小；</p>
+<p>@extend：</p>
+<p>1）编译后创造DRY，gzip压缩后会破坏DRY</p>
+<p>尽量使用@mixin！！</p>
+<h6 id="mixin-function"><a href="#mixin-function" class="headerlink" title="@mixin|%|@function"></a>@mixin|%|@function</h6><p>@mixin：@mixin-@include；</p>
+<p>%：%-@extend</p>
+<p>@function：@return一个结果，用小括号执行</p>
+<pre><code class="hljs scss"><span class="hljs-keyword">@function</span> px(<span class="hljs-variable">$value</span>) &#123;
+  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$value</span> * <span class="hljs-number">2</span> + px
+&#125;
+
+.smallBox &#123;
+  <span class="hljs-attribute">width</span>: px(<span class="hljs-number">50</span>);
+  <span class="hljs-attribute">height</span>: px(<span class="hljs-number">50</span>);
+&#125;
+
+<span class="hljs-selector-class">.bigBox</span> &#123;
+  <span class="hljs-attribute">width</span>: px(<span class="hljs-number">150</span>);
+  <span class="hljs-attribute">height</span>: px(<span class="hljs-number">150</span>);
+&#125;
+<span class="hljs-comment">// 编译后</span>
+<span class="hljs-selector-class">.smallBox</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+&#125;
+
+<span class="hljs-selector-class">.bigBox</span> &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+&#125;</code></pre>
+
+<p>323</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/scss/">scss</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/scss/">scss</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/06/17/js-01/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">js-01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/13/js/index/">
+                        <span class="hidden-mobile">js黑洞</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/nipsilon.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

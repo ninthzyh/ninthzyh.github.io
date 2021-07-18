@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>标签 - 老废物乐园</title>
+  <title>charles - 老废物乐园</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -146,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签">
+            <span class="h2" id="subtitle" title="charles">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-14 20:15" pubdate>
+        2021年7月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      493 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,24 +214,109 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/charles/" style="font-size: 15px; color: #bbe">charles</a> <a href="/tags/css/" style="font-size: 30px; color: #337ab7">css</a> <a href="/tags/js/" style="font-size: 20px; color: #8ea5dc">js</a> <a href="/tags/nginx/" style="font-size: 15px; color: #bbe">nginx</a> <a href="/tags/react-native/" style="font-size: 15px; color: #bbe">react native</a> <a href="/tags/scss/" style="font-size: 15px; color: #bbe">scss</a> <a href="/tags/week/" style="font-size: 25px; color: #6090c9">week</a>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">charles</h1>
+            
+            <div class="markdown-body">
+              <h1 id="weight"><a href="#weight" class="headerlink" title="weight"></a>weight</h1><h3 id="charles"><a href="#charles" class="headerlink" title="charles"></a>charles</h3><h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h4><p>charles是http的代理服务器，截取请求和请求结果达到抓包的目的。</p>
+<ul>
+<li>作用：分析前后端问题；弱网环境下测试；用断点构建异常的测试场景；</li>
+<li>工作原理</li>
+</ul>
+<p><img src="D:\hexo\blog\img\charles\工作原理.png" srcset="/img/loading.gif"></p>
+<ul>
+<li>功能：支持http、https的代理；流量控制（模拟弱网环境）；断点调试；接口并发请求；重发网络请求；</li>
+<li>优点：反向代理；支持多平台（linux、mac、windows）；可以通过域名和接口查看，简洁明了；支持网络限速，选择网络；支持amf协议；</li>
+</ul>
+<h4 id="2-代理设置"><a href="#2-代理设置" class="headerlink" title="2.代理设置"></a>2.代理设置</h4><ul>
+<li>proxy—Access Control Settings：（访问控制）允许的IP通过charles访问网络，勾选prompt to allow unauthorized connections 不在列表里的ip通过charles访问网络时有提示信息：“是否通过charles访问服务器”</li>
+<li>proxy—proxy Settings：设置代理端口</li>
+<li>windows开启代理：chrome—-设置—-代理（<strong>打开您计算机的代理设置</strong>）—-输入charles所在的ip和proxy Settings设置的端口（默认8888）。如果charles就在本机上只需要勾选（proxy—-windows proxy）</li>
+<li>proxy—SSL Proxying Settings：设置charles抓包的地址，全部location填*</li>
+<li>help—–SSL Proxying—-Install Charles Root Certificate：添加https证书，不添加https证书，请求https会看到乱码</li>
+</ul>
+<h4 id="3-流量配置"><a href="#3-流量配置" class="headerlink" title="3.流量配置"></a>3.流量配置</h4><p>proxy—-Throttle Setting：流量配置，勾选Enable Torottling</p>
+<h4 id="4-弱网测试"><a href="#4-弱网测试" class="headerlink" title="4.弱网测试"></a>4.弱网测试</h4><p>针对app测试网络环境差的情况下会不会闪退、崩溃等</p>
+<p>流量配置后timing会边长</p>
+<h4 id="5-断点配置"><a href="#5-断点配置" class="headerlink" title="5.断点配置"></a>5.断点配置</h4><ul>
+<li>在charles的接口列表种选择自己需要调试的接口，右键选择breakpoints开启断点调试，前端页面请求这个接口，请求会被charles拦截。</li>
+<li>选择左侧breakpoints的断点，右侧Edit Request—-JSON Text对入参进行修改，修改完成后选择Execute。</li>
+<li>charles把客户端请求发给服务器，服务器把请求结果再给charles，charles拦截，可以对出参进行修改，Edit Response—-JSON Text，修改完成后选择Execute。charles再把请求结果交给客户端。</li>
+</ul>
 
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/charles/">charles</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/charles/">charles</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/30/nginx/">
+                        <span class="hidden-mobile">nginx</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -261,9 +399,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 
