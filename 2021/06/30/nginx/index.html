@@ -231,17 +231,17 @@
 <p>支持动态语言（不支持Java）；</p>
 <p>高负载支持高达5w并发；</p>
 <h3 id="2-正向代理"><a href="#2-正向代理" class="headerlink" title="2.正向代理"></a>2.正向代理</h3><p>客户端直接无法访问网址(<a target="_blank" rel="noopener" href="http://www.google.com),就先在浏览器中配置代理服务器,用代理服务器去访问这个网址./">www.google.com)，就先在浏览器中配置代理服务器，用代理服务器去访问这个网址。</a></p>
-<p><img src="D:\hexo\blog\img\nginx\正向代理.jpg" srcset="/img/loading.gif"></p>
+<p><img src="/2021/06/30/nginx/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.jpg" srcset="/img/loading.gif"></p>
 <h3 id="3-反向代理"><a href="#3-反向代理" class="headerlink" title="3.反向代理"></a>3.反向代理</h3><p><strong>目标服务器看作不同后端的地址</strong></p>
 <p>客户端不会直接访问目标服务器（8080、8081、8082），客户端（不需要在浏览器中配置代理服务器）先访问反向代理服务器（9001），反向代理服务器再去访问目标服务器获取数据，然后再把数据返回给客户端。</p>
 <p>对外暴露反向代理服务器的地址，隐藏目标服务器的地址，对用户来说访问的是（反向代理+目标服务器）一台服务器。</p>
-<p><img src="D:\hexo\blog\img\nginx\反向代理.png" srcset="/img/loading.gif"></p>
+<p><img src="/2021/06/30/nginx/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" srcset="/img/loading.gif"></p>
 <h3 id="4-负载均衡"><a href="#4-负载均衡" class="headerlink" title="4.负载均衡"></a>4.负载均衡</h3><p>反向代理的目标服务器有多个，分散一台服务器的请求、相应的压力。</p>
 <p>单一服务器：</p>
 <p>客户端请求服务端数，服务端操作数据库，获取到了数据相应客户端</p>
 <p>多个服务器：上图反向代理</p>
 <h3 id="5-动静分离"><a href="#5-动静分离" class="headerlink" title="5.动静分离"></a>5.动静分离</h3><p>反向代理服务器把请求动态资源和静态资源分在两台服务器上</p>
-<p><img src="D:\hexo\blog\img\nginx\动静分离.png" srcset="/img/loading.gif"></p>
+<p><img src="/2021/06/30/nginx/%E5%8A%A8%E9%9D%99%E5%88%86%E7%A6%BB.png" srcset="/img/loading.gif"></p>
 <h3 id="6-nginx命令"><a href="#6-nginx命令" class="headerlink" title="6.nginx命令"></a>6.nginx命令</h3><pre><code class="hljs asciidoc">查看开放的端口号：
 firewall-cmd --list-all
 
@@ -439,7 +439,7 @@ location <span class="hljs-regexp">/b/</span>&#123;
 <span class="hljs-regexp">/a/</span>x	---&gt;	通过<span class="hljs-regexp">/a访问http:/</span><span class="hljs-regexp">/ip/</span>a/x
 <span class="hljs-regexp">/b/</span>x 	---&gt;	通过<span class="hljs-regexp">/b/</span>x<span class="hljs-regexp">/访问http:/</span><span class="hljs-regexp">/ip/</span>x</code></pre>
 
-<h5 id="alias别名"><a href="#alias别名" class="headerlink" title="alias别名"></a>alias别名</h5><p>alias后的路径不加location的匹配，alias后路径以 <code>/</code> 结尾；</p>
+<h5 id="alias别名"><a href="#alias别名" class="headerlink" title="alias别名"></a>alias别名</h5><p>alias后的路径不加location的匹配，alias后路径以 <code>/</code> 结尾；</p>
 <p>root后的路径不管location匹配的是什么 都要拼在路径后；</p>
 <pre><code class="hljs gradle"># 如果访问 www.domain.com<span class="hljs-regexp">/i/</span>test.png 最后返回的结果为 <span class="hljs-regexp">/data/</span>w3<span class="hljs-regexp">/i/</span>test.png ,root 配置最后的/要不要都行
 location <span class="hljs-regexp">/i/</span> &#123;
@@ -519,7 +519,7 @@ location <span class="hljs-regexp">/i/</span> &#123;
 		&#125;
 	&#125;</code></pre>
 
-<h3 id="11-高可用"><a href="#11-高可用" class="headerlink" title="11.高可用"></a>11.高可用</h3><p><img src="D:\hexo\blog\img\nginx\高可用.png" srcset="/img/loading.gif"></p>
+<h3 id="11-高可用"><a href="#11-高可用" class="headerlink" title="11.高可用"></a>11.高可用</h3><p><img src="/2021/06/30/nginx/%E9%AB%98%E5%8F%AF%E7%94%A8.png" srcset="/img/loading.gif"></p>
 <p>浏览器发送请求到一台nginx上，一台nginx可能宕机。</p>
 <p>两台nginx服务器做主、备服务器，当主服务器nginx1宕机，就用备份服务器nginx2去请求目标服务器。对外浏览器请求是一个虚拟ip，虚拟ip默认绑定在主服务器上，主服务器宕机服务器上的keepalived会将虚拟ip绑定到备份服务器上，就能继续请求目标服务器。</p>
 <p>1）<strong>主备服务器上需要安装keepalived软件</strong></p>
@@ -527,11 +527,11 @@ location <span class="hljs-regexp">/i/</span> &#123;
 <p>3）/usr/local/src添加检测服务器是否宕机的脚本</p>
 <p>4）启动两台服务器和上面的keepalived（systemctl start keepalived.service）</p>
 <p>5）浏览器中访问虚拟ip会把请求发送到主服务器nginx1，主服务器宕机就会把请求发送到备份服务器nginx2</p>
-<h3 id="12-原理"><a href="#12-原理" class="headerlink" title="12.原理"></a>12.原理</h3><p><img src="D:\hexo\blog\img\nginx\原理1.png" srcset="/img/loading.gif"></p>
+<h3 id="12-原理"><a href="#12-原理" class="headerlink" title="12.原理"></a>12.原理</h3><p><img src="/2021/06/30/nginx/%E5%8E%9F%E7%90%861.png" srcset="/img/loading.gif"></p>
 <p>查看nginx进程</p>
 <p>ps -ef | grep nginx</p>
 <p>nginx有1个master（管理员）多个worker（工人），master接到任务发给worker，worker争抢任务。worker的数量由服务器cpu数决定，保证每个worker都有一个cpu可用，在nginx.conf的全局块中设置<code>worker_processes     n;</code>    </p>
-<p><img src="D:\hexo\blog\img\nginx\原理2.png" srcset="/img/loading.gif"></p>
+<p><img src="/2021/06/30/nginx/%E5%8E%9F%E7%90%862.png" srcset="/img/loading.gif"></p>
 <p>1）发送请求占用worker几个连接数：请求静态资源2个（client&lt;—&gt;worke），动态资源4个（client&lt;—&gt;worker&lt;—&gt;tomcat1）。</p>
 <p>2）最大并发数：worker_processes*worker_connection（最大连接数1024）/一个请求的连接数（静态请求2/动态请求4）</p>
 <p>3）1个mastern个worker的好处：</p>
